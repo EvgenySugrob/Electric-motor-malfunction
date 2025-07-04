@@ -1,0 +1,64 @@
+Настройка сценариев в инспекторе
+
+Обрыв обмотки статора:
+   
+Fault Type: StatorWindingBreak
+Description: Обрыв обмотки статора
+Symptoms: [["Jerking", "Рывки"], ["Stopped", "Остановлен"]]
+Diagnostic Tools: [Multimeter, ManualCheck]
+Diagnostic Result: Infinite resistance
+Fix Action: Replace stator winding
+
+Замыкание между обмотками:
+
+Fault Type: WindingShortCircuit
+Description: Замыкание между обмотками
+Symptoms: [["Vibration", "Вибрация"], ["Overheating", "Нагрев"], ["Stopped", "Остановлен"]]
+Diagnostic Tools: [Multimeter, ManualCheck]
+Diagnostic Result: Low resistance between windings
+Fix Action: Replace stator winding
+
+Межвитковое замыкание:
+
+Fault Type: InterTurnShortCircuit
+Description: Межвитковое замыкание
+Symptoms: [["LowPower", "Пониженная мощность"], ["Overheating", "Нагрев"]]
+Diagnostic Tools: [Megohmmeter, ManualCheck]
+Diagnostic Result: Low insulation resistance
+Fix Action: Replace stator winding
+
+Замыкание обмотки на корпус:
+
+Fault Type: WindingToCaseShort
+Description: Замыкание обмотки на корпус
+Symptoms: [["Overheating", "Нагрев"], ["Sparking", "Искрение"]]
+Diagnostic Tools: [Megohmmeter, ManualCheck]
+Diagnostic Result: Low resistance to case
+Fix Action: Replace stator winding
+
+Выход из строя токосъемных колец или щеток:
+
+Fault Type: SlipRingOrBrushFailure
+Description: Выход из строя токосъемных колец или щеток
+Symptoms: [["Intermittent", "Перебои"], ["Sparking", "Искрение"]]
+Diagnostic Tools: [ManualCheck]
+Diagnostic Result: Worn brushes or damaged rings detected
+Fix Action: Replace brushes or rings
+
+Заклинивание вала:
+
+Fault Type: ShaftJamming
+Description: Заклинивание вала
+Symptoms: [["Stopped", "Остановлен"], ["Vibration", "Вибрация"]]
+Diagnostic Tools: [ManualCheck]
+Diagnostic Result: Shaft cannot be rotated manually
+Fix Action: Clear jamming cause
+
+Люфт в подшипниках вала:
+
+Fault Type: BearingPlay
+Description: Люфт в подшипниках вала
+Symptoms: [["Vibration", "Вибрация"]]
+Diagnostic Tools: [ManualCheck]
+Diagnostic Result: Excessive shaft play detected
+Fix Action: Replace bearings
