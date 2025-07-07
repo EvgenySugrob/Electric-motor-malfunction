@@ -1,10 +1,23 @@
+using MyBox;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MeasurementManager : MonoBehaviour
 {
-    public FaultScenario activeScenario;
+    [Header("MainSetting")]
+    [SerializeField] private FaultScenario activeScenario;
+    [SerializeField] private TMP_Text multimeterDisplayText;
+
+    [Header("Multimeter")]
+    [SerializeField] Multimeter multimeter;
+
+    [Header("LogText")]
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] GameObject prefabTextSpawn;
+    private TMP_Text prefabText;
 
     private string pointA;
     private string pointB;
@@ -26,9 +39,12 @@ public class MeasurementManager : MonoBehaviour
         {
             pointB = pointId;
             Debug.Log($"Выбрана вторая точка: {pointB}");
-
             PerformMeasurement();
         }
+        //if(string.IsNullOrEmpty(pointA) && string.IsNullOrEmpty(pointB))
+        //{
+        //    PerformMeasurement();
+        //}
     }
 
     private void PerformMeasurement()
@@ -40,12 +56,21 @@ public class MeasurementManager : MonoBehaviour
         }
 
         string result = activeScenario.GetMeasurementResult(pointA, pointB);
+        multimeterDisplayText.text = result;
+
+        string currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+        GameObject spawnLogText = Instantiate(prefabTextSpawn,spawnPoint);
+        spawnLogText.transform.SetAsFirstSibling();
+        prefabText = spawnLogText.GetComponent<TMP_Text>();
+        prefabText.text = $"{pointA} - {pointB}: {result} - {currentTime} Om";
+        spawnLogText.SetActive(true);
+
+        multimeter.ProbesBack();
+
         Debug.Log($"Результат измерения между {pointA} и {pointB}: {result}");
 
-        // Сбросим точки
         pointA = null;
         pointB = null;
-
-        // TODO: отобразить результат на экране прибора
     }
 }

@@ -10,6 +10,6 @@ public abstract class FaultScenario : ScriptableObject
     [Header("Точки, в которых производится измерение")]
     public List<string> involvedPoints = new(); // Например: "U2", "V2", "W2"
 
-    public abstract void InitializeScenario(); // Вызывается при запуске
+    public abstract void InitializeScenario();
     public abstract string GetMeasurementResult(string pointA, string pointB);
 }

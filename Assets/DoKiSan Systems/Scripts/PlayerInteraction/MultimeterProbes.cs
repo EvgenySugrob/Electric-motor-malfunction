@@ -21,6 +21,9 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     [Header("Outline")]
     [SerializeField] Outline outline;
 
+    [Header("MeasurementPoint")]
+    [SerializeField] MeasurementPoint measurementPoint;
+
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Transform currentParent;
@@ -53,6 +56,13 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     {
         if(!isSelected)
         {
+            if(measurementPoint!=null)
+            {
+                measurementPoint.SetBusyState(false);
+                //добавить сброс точки на проверку.
+                measurementPoint = null;
+            }
+
             isSelected= true;
             outline.OutlineColor = colorSelected;
 
@@ -74,6 +84,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     private IEnumerator ProbeMoveToPoint(Transform probePosition)
     {
+        measurementPoint = probePosition.parent.GetComponent<MeasurementPoint>();
         isSelected = false;
         outline.OutlineColor = startColor;
 
@@ -82,6 +93,8 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
         transform.parent = null;
         transform.gameObject.layer = targetLayerName;
         yield return ProbeMove(probePosition.position,probePosition.eulerAngles);
+
+        measurementPoint.SetSelectPoint();
     }
 
     private YieldInstruction ProbeMove(Vector3 endPosition,Vector3 eulerAngle)
@@ -89,6 +102,29 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
         return DOTween.Sequence()
             .Append(transform.DOMove(endPosition,durationAnim))
             .Join(transform.DORotate(eulerAngle,durationAnim))
+            .Play()
+            .WaitForCompletion();
+    }
+
+    public void ProbeBackAfterMeasurement()
+    {
+        StartCoroutine(ProbeBackToMultimeter());
+    }
+
+    private IEnumerator ProbeBackToMultimeter()
+    {
+        measurementPoint.SetBusyState(false);
+        transform.gameObject.layer = defaulLayerName;
+        transform.parent = currentParent;
+
+        yield return ProbeMoveBack(startPosition,startRotation.eulerAngles);
+    }
+
+    private YieldInstruction ProbeMoveBack(Vector3 endPosition, Vector3 eulerAngle)
+    {
+        return DOTween.Sequence()
+            .Append(transform.DOLocalMove(endPosition, durationAnim))
+            .Join(transform.DOLocalRotate(eulerAngle, durationAnim))
             .Play()
             .WaitForCompletion();
     }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class MeasurementPoint : MonoBehaviour,IInteractable
 {
     public string pointId;
+    [SerializeField] MeasurementManager measurementManager;
     [SerializeField] Transform probePosition;
     [SerializeField] MouseCursorHandler mouseCursorHandler;
     [SerializeField] Outline outline;
-    private MultimeterProbes currentProbe;
+    [SerializeField] private MultimeterProbes currentProbe;
     private bool isBusy = false;
 
     private void Start()
@@ -37,7 +38,30 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
                 currentProbe = mouseCursorHandler.GetMultimeterProbe();
 
                 currentProbe.SetMeasuringPoint(probePosition);
+
+                isBusy= true;
+
+                ForceDisableOutline();
             }
         }
+    }
+
+    public void SetSelectPoint()
+    {
+        measurementManager.SelectPoint(pointId);
+    }
+
+    public bool GetBusyState()
+    {
+        return isBusy;
+    }
+    public void SetBusyState(bool isState)
+    {
+        isBusy = isState;
+    }
+
+    private void ForceDisableOutline()
+    {
+        outline.enabled= false;
     }
 }

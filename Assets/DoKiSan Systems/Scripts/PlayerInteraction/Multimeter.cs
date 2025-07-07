@@ -215,4 +215,25 @@ public class Multimeter : MonoBehaviour,IInteractable
 
         PlayerControlDisable(true);
     }
+
+    public void ProbesBack()
+    {
+        StartCoroutine(WaitProbeBack());
+    }
+
+    private IEnumerator WaitProbeBack()
+    {
+        PlayerControlDisable(false);
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (MultimeterProbes probe in multimeterProbes)
+        {
+            probe.ProbeBackAfterMeasurement();
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        PlayerControlDisable(true);
+    }
 }
