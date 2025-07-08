@@ -14,6 +14,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private Color originalColor;
     private Animator animator;
     [SerializeField] private bool isDisassembled = false; // Состояние разборки
+    [SerializeField] private PowerSwitch powerSwitch;
 
     [Header("Animation Setting")]
     [SerializeField] AnimationDisassembly animationDisassembly;
@@ -54,7 +55,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        if (motorController.GetIsMotorActive())
+        //if (motorController.GetIsMotorActive())
+        if(powerSwitch.GetIsOn())
             return;
 
         if (isDisassembled && CanAssemble())

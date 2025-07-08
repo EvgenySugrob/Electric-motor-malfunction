@@ -85,6 +85,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     private IEnumerator ProbeMoveToPoint(Transform probePosition)
     {
         measurementPoint = probePosition.parent.GetComponent<MeasurementPoint>();
+
         isSelected = false;
         outline.OutlineColor = startColor;
 

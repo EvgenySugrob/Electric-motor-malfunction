@@ -98,10 +98,6 @@ public class MotorController : MonoBehaviour
                     StartShaftPlay();
                     break;
                 case "Вибрация":
-                    //if (ScenarioManager.Instance.GetCurrentScenario().faultType == MotorFaultType.BearingPlay)
-                    //{
-                    //    StartShaftPlay();
-                    //}
                     StartVibrationEffect();
                     break;
                 case "Нагрев":
@@ -370,6 +366,11 @@ public class MotorController : MonoBehaviour
         isFixed = true;
         //ResetSymptoms();
         Debug.Log("Анимация устранения завершена.");
+    }
+
+    public bool GetIsStopedNow()
+    {
+        return isStopedNow;
     }
 
     private void OnDestroy()

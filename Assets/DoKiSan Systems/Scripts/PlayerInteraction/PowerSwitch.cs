@@ -11,7 +11,7 @@ public class PowerSwitch : MonoBehaviour, IInteractable
     [SerializeField] Outline outline;
     [SerializeField] float durationAnimation = 0.5f;
     [SerializeField] Vector3 angleRotate = new Vector3(0,0,0);
-    private bool isOn = false;
+    [SerializeField]private bool isOn = false;
 
     public void OnHoverEnter()
     {
@@ -37,8 +37,14 @@ public class PowerSwitch : MonoBehaviour, IInteractable
             .WaitForCompletion();
 
         isOn = !isOn;
-        motorController.ActiveMotorButtonClick();
+        if (!motorController.GetIsStopedNow())
+        {
+            motorController.ActiveMotorButtonClick();
+        }
     }
 
-    
+    public bool GetIsOn()
+    {
+        return isOn;
+    }
 }

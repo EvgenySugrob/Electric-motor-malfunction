@@ -6,6 +6,8 @@ using UnityEngine;
 public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
 {
     [SerializeField] private (string, string) brokenPair;
+    [SerializeField] private float minValue = 50.08f;
+    [SerializeField] private float maxValue = 50.14f;
 
     public override void InitializeScenario()
     {
@@ -28,9 +30,14 @@ public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
             (a == brokenPair.Item1 && b == brokenPair.Item2) ||
             (a == brokenPair.Item2 && b == brokenPair.Item1);
 
-        return isBroken ? "Break" : "50.12";
+        return isBroken ? "1           " : GetNormalValue().ToString();
     }
 
     public MotorFaultType GetMotorFaultType() => MotorFaultType.StatorWindingBreak;
     
+    private float GetNormalValue()
+    {
+        float value = Random.Range(minValue, maxValue);
+        return Mathf.Round(value * 100f) / 100f;
+    }
 }

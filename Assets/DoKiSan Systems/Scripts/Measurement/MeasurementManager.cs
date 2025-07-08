@@ -63,7 +63,7 @@ public class MeasurementManager : MonoBehaviour
         GameObject spawnLogText = Instantiate(prefabTextSpawn,spawnPoint);
         spawnLogText.transform.SetAsFirstSibling();
         prefabText = spawnLogText.GetComponent<TMP_Text>();
-        prefabText.text = $"{pointA} - {pointB}: {result} - {currentTime} Om";
+        prefabText.text = $"{pointA} - {pointB}: {result} Om - {currentTime}";
         spawnLogText.SetActive(true);
 
         multimeter.ProbesBack();
