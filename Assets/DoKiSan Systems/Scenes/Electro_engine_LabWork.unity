@@ -5327,9 +5327,11 @@ MonoBehaviour:
   activeScenario: {fileID: 0}
   multimeterDisplayText: {fileID: 799099591}
   multimeter: {fileID: 2140731289}
+  d: 0
   spawnPoint: {fileID: 3315353741073615616}
   prefabTextSpawn: {fileID: 3838300398510058738, guid: e4c23ebd22915c749b2a363db5b966a2,
     type: 3}
+  textToMoveProbe: '1    '
 --- !u!4 &177621096
 Transform:
   m_ObjectHideFlags: 0
@@ -13589,9 +13591,12 @@ GameObject:
   - component: {fileID: 482906714}
   - component: {fileID: 482906719}
   - component: {fileID: 482906718}
-  - component: {fileID: 482906717}
   - component: {fileID: 482906716}
   - component: {fileID: 482906715}
+  - component: {fileID: 482906717}
+  - component: {fileID: 482906722}
+  - component: {fileID: 482906721}
+  - component: {fileID: 482906720}
   m_Layer: 0
   m_Name: Upper_nut_for_klemma_2 (2)
   m_TagString: Untagged
@@ -13631,7 +13636,7 @@ MonoBehaviour:
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 693468181}
   mouseCursorHandler: {fileID: 963194229}
-  outline: {fileID: 482906716}
+  outline: {fileID: 7937641866946997937}
   currentProbe: {fileID: 0}
 --- !u!114 &482906716
 MonoBehaviour:
@@ -13670,8 +13675,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010689248, y: 0.0059628855, z: 0.012341275}
-  m_Center: {x: 0.000000014901161, y: 0, z: -0.000000014901161}
+  m_Size: {x: 0.00303617, y: 0.05652654, z: 0.12901556}
+  m_Center: {x: -0.0016428202, y: -0.015988767, z: -0.00054596364}
 --- !u!23 &482906718
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13679,7 +13684,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482906713}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13722,6 +13727,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482906713}
   m_Mesh: {fileID: 4633287391117853402, guid: 79e27ee317c5a68479271090dfa12d6b, type: 3}
+--- !u!65 &482906720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482906713}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.16196126, y: 0.056780934, z: 0.0041267266}
+  m_Center: {x: -0.084667005, y: -0.01603204, z: 0.065292045}
+--- !u!65 &482906721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482906713}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.16163377, y: 0.0565871, z: 0.0038262894}
+  m_Center: {x: -0.08450325, y: -0.015935123, z: -0.0658609}
+--- !u!65 &482906722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482906713}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0025460713, y: 0.056877375, z: 0.12836058}
+  m_Center: {x: -0.16717169, y: -0.01608026, z: 0.000104658306}
 --- !u!1 &483854822
 GameObject:
   m_ObjectHideFlags: 0
@@ -33859,9 +33927,11 @@ MonoBehaviour:
   targetLayerName:
     serializedVersion: 2
     m_Bits: 1
+  probeID: 1
   multimeter: {fileID: 2140731289}
   outline: {fileID: 488257122}
   measurementPoint: {fileID: 0}
+  measurementManager: {fileID: 177621095}
 --- !u!1 &1090638022
 GameObject:
   m_ObjectHideFlags: 0
@@ -59506,9 +59576,11 @@ MonoBehaviour:
   targetLayerName:
     serializedVersion: 2
     m_Bits: 1
+  probeID: 0
   multimeter: {fileID: 2140731289}
   outline: {fileID: 1768393663}
   measurementPoint: {fileID: 0}
+  measurementManager: {fileID: 177621095}
 --- !u!1 &1882679657
 GameObject:
   m_ObjectHideFlags: 0
@@ -67737,9 +67809,11 @@ MonoBehaviour:
   targetLayerName:
     serializedVersion: 2
     m_Bits: 0
+  probeID: 0
   multimeter: {fileID: 2140731289}
   outline: {fileID: 1865795718}
   measurementPoint: {fileID: 0}
+  measurementManager: {fileID: 0}
 --- !u!4 &2122091437
 Transform:
   m_ObjectHideFlags: 0
@@ -73638,6 +73712,7 @@ GameObject:
   - component: {fileID: 5456597941305267639}
   - component: {fileID: 7937641866946997935}
   - component: {fileID: 7937641866946997936}
+  - component: {fileID: 7937641866946997937}
   m_Layer: 0
   m_Name: Electro_engine_main_corpus
   m_TagString: Untagged
@@ -106478,6 +106553,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8299420078210975231, guid: 79e27ee317c5a68479271090dfa12d6b, type: 3}
+--- !u!114 &7937641866946997937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103763241338277192}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.40000004, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &7938931015257283888
 MeshFilter:
   m_ObjectHideFlags: 0

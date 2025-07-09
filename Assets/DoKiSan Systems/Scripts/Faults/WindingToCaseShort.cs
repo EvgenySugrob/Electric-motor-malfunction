@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Faults/Обрыв обмотки статора")]
-public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
+[CreateAssetMenu(menuName = "Faults/Замыкание на корпус")]
+public class WindingToCaseShort : FaultScenario, IMotorFaultTypeProvider
 {
-    private (string, string) brokenPair;
+    private string brokenPoint;
     [SerializeField] private float minValue = 50.08f;
     [SerializeField] private float maxValue = 51.27f;
     [SerializeField] private float minDefect = 9.51f;
@@ -13,24 +13,14 @@ public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
 
     public override void InitializeScenario()
     {
-        var candidates = new List<(string, string)>
-        {
-            ("U2", "V2"),
-            ("V2", "W2"),
-            ("U2", "W2")
-        };
-
-        int index = Random.Range(0, candidates.Count);
-        brokenPair = candidates[index];
-
-        Debug.Log($"[Fault Init] Обрыв между: {brokenPair.Item1} и {brokenPair.Item2}");
+        var point = new List<string> { "U1", "U2", "V1", "V2", "W1", "W2" };
+        brokenPoint = point[Random.Range(0, point.Count)];
     }
 
-    public override MeasurementResult GetMeasurementResult(string a, string b)
+    public override MeasurementResult GetMeasurementResult(string pointA, string pointB)
     {
-        bool isBroken =
-            (a == brokenPair.Item1 && b == brokenPair.Item2) ||
-            (a == brokenPair.Item2 && b == brokenPair.Item1);
+        bool isBroken = (pointA == brokenPoint && pointB == "Ground") ||
+            (pointB == brokenPoint && pointA == "Ground");
 
         if(isBroken)
         {
@@ -44,8 +34,8 @@ public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
         }
     }
 
-    public MotorFaultType GetMotorFaultType() => MotorFaultType.StatorWindingBreak;
-    
+    public MotorFaultType GetMotorFaultType() => MotorFaultType.WindingToCaseShort;
+
     private float GetNormalValue()
     {
         float value = Random.Range(minValue, maxValue);

@@ -46,9 +46,12 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
         }
     }
 
-    public void SetSelectPoint()
+    public void SetSelectPoint(MultimeterProbes probe)
     {
-        measurementManager.SelectPoint(pointId);
+        currentProbe = probe;
+        currentProbe.SetMeasuramentPointReference(this);
+
+        measurementManager.SetProbePoint(probe, pointId);
     }
 
     public bool GetBusyState()

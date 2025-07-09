@@ -9,11 +9,12 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     [Header("ProbeInteraction")]
     [SerializeField] MouseCursorHandler mouseCursorHandler;
     [SerializeField] Color colorSelected;
-    private Color startColor;
     [SerializeField] private bool isSelected = false;
     [SerializeField] private float durationAnim = 0.25f;
     [SerializeField] LayerMask targetLayerName;
+    [SerializeField] int probeID;
     private LayerMask defaulLayerName;
+    private Color startColor;
 
     [Header("Multimeter")]
     [SerializeField] Multimeter multimeter;
@@ -23,10 +24,14 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     [Header("MeasurementPoint")]
     [SerializeField] MeasurementPoint measurementPoint;
+    [SerializeField] MeasurementManager measurementManager;
 
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Transform currentParent;
+
+    private float lastClickTime = 0f;
+    private float doubleClickThreshold = 0.3f;
 
     private void Start()
     {
@@ -54,12 +59,31 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
+        float currentTime = Time.time;
+
+        if(currentTime -lastClickTime<=doubleClickThreshold)
+        {
+            if(measurementPoint != null)
+            {
+                measurementPoint.SetBusyState(false);
+                measurementPoint = null;
+            }
+
+            measurementManager.ClearProbePoint(this);
+            StartCoroutine(ProbeBackToMultimeter());
+            ForceOutlineDisable();
+
+            lastClickTime = 0;
+            return;
+        }
+
+        lastClickTime = currentTime;
+
         if(!isSelected)
         {
             if(measurementPoint!=null)
             {
                 measurementPoint.SetBusyState(false);
-                //добавить сброс точки на проверку.
                 measurementPoint = null;
             }
 
@@ -79,6 +103,12 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     public void SetMeasuringPoint(Transform probePosition)
     {
+        measurementManager.EnableTextMoveProbe();
+        if (measurementPoint != null)
+        {
+            measurementPoint.SetBusyState(false);
+        }
+        ForceOutlineDisable();
         StartCoroutine(ProbeMoveToPoint(probePosition));
     }
 
@@ -95,7 +125,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
         transform.gameObject.layer = targetLayerName;
         yield return ProbeMove(probePosition.position,probePosition.eulerAngles);
 
-        measurementPoint.SetSelectPoint();
+        measurementPoint.SetSelectPoint(this);
     }
 
     private YieldInstruction ProbeMove(Vector3 endPosition,Vector3 eulerAngle)
@@ -114,7 +144,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     private IEnumerator ProbeBackToMultimeter()
     {
-        measurementPoint.SetBusyState(false);
+        //measurementPoint.SetBusyState(false);
         transform.gameObject.layer = defaulLayerName;
         transform.parent = currentParent;
 
@@ -128,5 +158,21 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
             .Join(transform.DOLocalRotate(eulerAngle, durationAnim))
             .Play()
             .WaitForCompletion();
+    }
+
+    public int GetProbeId()
+    {
+        return probeID;
+    }
+
+    public void SetMeasuramentPointReference(MeasurementPoint point)
+    {
+        measurementPoint = point;
+    }
+
+    private void ForceOutlineDisable()
+    {
+        outline.OutlineColor = startColor;
+        outline.enabled = false;
     }
 }

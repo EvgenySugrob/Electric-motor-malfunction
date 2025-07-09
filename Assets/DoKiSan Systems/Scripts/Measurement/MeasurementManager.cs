@@ -14,9 +14,13 @@ public class MeasurementManager : MonoBehaviour
     [Header("Multimeter")]
     [SerializeField] Multimeter multimeter;
 
+    [Header("Megaommetr")]
+    [SerializeField] private float d = 0f;
+
     [Header("LogText")]
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject prefabTextSpawn;
+    [SerializeField] string textToMoveProbe;
     private TMP_Text prefabText;
 
     private string pointA;
@@ -28,49 +32,65 @@ public class MeasurementManager : MonoBehaviour
         activeScenario.InitializeScenario();
     }
 
-    public void SelectPoint(string pointId)
+    public void SetProbePoint(MultimeterProbes probe, string pointId)
     {
-        if (string.IsNullOrEmpty(pointA))
-        {
+        if (probe.GetProbeId() == 0)
             pointA = pointId;
-            Debug.Log($"Выбрана первая точка: {pointA}");
-        }
-        else
-        {
+        else if(probe.GetProbeId()==1)
             pointB = pointId;
-            Debug.Log($"Выбрана вторая точка: {pointB}");
-            PerformMeasurement();
-        }
-        //if(string.IsNullOrEmpty(pointA) && string.IsNullOrEmpty(pointB))
-        //{
-        //    PerformMeasurement();
-        //}
+
+        TryMeasure();
     }
 
-    private void PerformMeasurement()
+    public void ClearProbePoint(MultimeterProbes probe)
     {
-        if (activeScenario == null)
+        if (probe.GetProbeId() == 0)
+            pointA = null;
+        else if (probe.GetProbeId() == 1)
+            pointB = null;
+
+        multimeterDisplayText.text = textToMoveProbe;
+
+        //if (megohmmeterNeedle != null)
+        //{
+        //    megohmmeterNeedle
+        //        .DOLocalRotate(Vector3.zero, needleMoveDuration)
+        //        .SetEase(Ease.OutQuad);
+        //}
+        //сброс показания на мультиметре
+    }
+
+    private void TryMeasure()
+    {
+        if(!string.IsNullOrEmpty(pointA) && !string.IsNullOrEmpty(pointB))
         {
-            Debug.LogWarning("Нет активного сценария!");
-            return;
+            MeasurementResult result = activeScenario.GetMeasurementResult(pointA, pointB);
+
+            multimeterDisplayText.text = result.displayText;
+
+            // Поворачиваем стрелку мегаомметра, если она есть
+            //if (megohmmeterNeedle != null)
+            //{
+            //    megohmmeterNeedle
+            //        .DOLocalRotate(new Vector3(0, 0, -result.needleAngle), needleMoveDuration)
+            //        .SetEase(Ease.OutQuad);
+            //}
+
+
+            string currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+            GameObject spawnLogText = Instantiate(prefabTextSpawn, spawnPoint);
+            spawnLogText.transform.SetAsFirstSibling();
+
+            prefabText = spawnLogText.GetComponent<TMP_Text>();
+            prefabText.text = $"{pointA} - {pointB}: {result} Om - {currentTime}";
+
+            spawnLogText.SetActive(true);
         }
+    }
 
-        string result = activeScenario.GetMeasurementResult(pointA, pointB);
-        multimeterDisplayText.text = result;
-
-        string currentTime = DateTime.Now.ToString("HH:mm:ss");
-
-        GameObject spawnLogText = Instantiate(prefabTextSpawn,spawnPoint);
-        spawnLogText.transform.SetAsFirstSibling();
-        prefabText = spawnLogText.GetComponent<TMP_Text>();
-        prefabText.text = $"{pointA} - {pointB}: {result} Om - {currentTime}";
-        spawnLogText.SetActive(true);
-
-        multimeter.ProbesBack();
-
-        Debug.Log($"Результат измерения между {pointA} и {pointB}: {result}");
-
-        pointA = null;
-        pointB = null;
+    public void EnableTextMoveProbe()
+    {
+        multimeterDisplayText.text = textToMoveProbe + "\t";
     }
 }

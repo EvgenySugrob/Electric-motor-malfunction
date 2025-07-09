@@ -11,5 +11,5 @@ public abstract class FaultScenario : ScriptableObject
     public List<string> involvedPoints = new(); // Например: "U2", "V2", "W2"
 
     public abstract void InitializeScenario();
-    public abstract string GetMeasurementResult(string pointA, string pointB);
+    public abstract MeasurementResult GetMeasurementResult(string pointA, string pointB);
 }
