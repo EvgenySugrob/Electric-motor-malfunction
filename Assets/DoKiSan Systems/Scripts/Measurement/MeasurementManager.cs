@@ -1,3 +1,4 @@
+using DG.Tweening;
 using MyBox;
 using System;
 using System.Collections;
@@ -15,13 +16,18 @@ public class MeasurementManager : MonoBehaviour
     [SerializeField] Multimeter multimeter;
 
     [Header("Megaommetr")]
-    [SerializeField] private float d = 0f;
+    [SerializeField] Megaommetr megaommetr;
+    [SerializeField] Transform megaommeterNeedle;
+    [SerializeField] float needleMoveDuration = 0.25f;
 
     [Header("LogText")]
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject prefabTextSpawn;
     [SerializeField] string textToMoveProbe;
     private TMP_Text prefabText;
+
+    [Header("MouseCursorHandler")]
+    [SerializeField] MouseCursorHandler mouseCursorHandler;
 
     private string pointA;
     private string pointB;
@@ -44,6 +50,7 @@ public class MeasurementManager : MonoBehaviour
 
     public void ClearProbePoint(MultimeterProbes probe)
     {
+        Debug.Log("CLEAR PROBE");
         if (probe.GetProbeId() == 0)
             pointA = null;
         else if (probe.GetProbeId() == 1)
@@ -51,31 +58,42 @@ public class MeasurementManager : MonoBehaviour
 
         multimeterDisplayText.text = textToMoveProbe;
 
-        //if (megohmmeterNeedle != null)
-        //{
-        //    megohmmeterNeedle
-        //        .DOLocalRotate(Vector3.zero, needleMoveDuration)
-        //        .SetEase(Ease.OutQuad);
-        //}
-        //сброс показания на мультиметре
+        if (megaommeterNeedle != null)
+        {
+            megaommeterNeedle
+                .DOLocalRotate(Vector3.zero, needleMoveDuration)
+                .SetEase(Ease.OutQuad)
+                .Play();
+        }
     }
 
     private void TryMeasure()
     {
         if(!string.IsNullOrEmpty(pointA) && !string.IsNullOrEmpty(pointB))
         {
-            MeasurementResult result = activeScenario.GetMeasurementResult(pointA, pointB);
+            MeasurementResult result;
+
+            if(mouseCursorHandler.GetCurrentInstrument().GetComponent<Multimeter>()==multimeter)
+            {
+                Debug.Log("МУЛЬТИМЕТР РЕЗУЛЬТАТ");
+                result = activeScenario.GetMultimeterResult(pointA, pointB);
+            }
+            else
+            {
+                Debug.Log("МАГАОММЕТР РЕЗУЛЬТАТ");
+                result = activeScenario.GetMegaommeterResult(pointA, pointB);
+            }
 
             multimeterDisplayText.text = result.displayText;
 
             // Поворачиваем стрелку мегаомметра, если она есть
-            //if (megohmmeterNeedle != null)
-            //{
-            //    megohmmeterNeedle
-            //        .DOLocalRotate(new Vector3(0, 0, -result.needleAngle), needleMoveDuration)
-            //        .SetEase(Ease.OutQuad);
-            //}
-
+            if (megaommeterNeedle != null && mouseCursorHandler.GetCurrentInstrument().GetComponent<Megaommetr>()==megaommetr)
+            {
+                megaommeterNeedle
+                    .DOLocalRotate(new Vector3(0, -result.needleAngle, 0), needleMoveDuration)
+                    .SetEase(Ease.OutQuad)
+                    .Play();
+            }
 
             string currentTime = DateTime.Now.ToString("HH:mm:ss");
 
@@ -83,7 +101,7 @@ public class MeasurementManager : MonoBehaviour
             spawnLogText.transform.SetAsFirstSibling();
 
             prefabText = spawnLogText.GetComponent<TMP_Text>();
-            prefabText.text = $"{pointA} - {pointB}: {result} Om - {currentTime}";
+            prefabText.text = $"{pointA} - {pointB}: {result.displayText} Om - {currentTime}";
 
             spawnLogText.SetActive(true);
         }

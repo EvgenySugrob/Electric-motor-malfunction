@@ -15,6 +15,9 @@ public class Megaommetr : MonoBehaviour, IInteractable
     [Header("OutlineControl")]
     [SerializeField] Outline caseOutline;
 
+    [Header("Probes")]
+    [SerializeField] List<MultimeterProbes> multimeterProbes;
+
     [Header("PlayerControl")]
     [SerializeField] CameraController cameraController;
     [SerializeField] MouseCursorHandler cursorHandler;
@@ -86,6 +89,11 @@ public class Megaommetr : MonoBehaviour, IInteractable
             transform.eulerAngles = pointsInHand[0].eulerAngles;
             transform.parent = cameraController.transform;
 
+            foreach (MultimeterProbes probe in multimeterProbes)
+            {
+                probe.gameObject.SetActive(true);
+            }
+
             yield return ToolMoveUp();
 
             PlayerControlDisable(true);
@@ -119,6 +127,13 @@ public class Megaommetr : MonoBehaviour, IInteractable
         cursorHandler.SetCurrentInstrument(null);
 
         yield return ToZeroPoint();
+
+        foreach (MultimeterProbes probe in multimeterProbes)
+        {
+            probe.gameObject.SetActive(false);
+            probe.ProbeStartPosition();
+            probe.ForceCLear();
+        }
 
         cameraOverlay.SetActive(false);
 

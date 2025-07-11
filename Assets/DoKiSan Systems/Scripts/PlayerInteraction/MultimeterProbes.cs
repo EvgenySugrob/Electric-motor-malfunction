@@ -11,13 +11,13 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     [SerializeField] Color colorSelected;
     [SerializeField] private bool isSelected = false;
     [SerializeField] private float durationAnim = 0.25f;
-    [SerializeField] LayerMask targetLayerName;
+    [SerializeField] int targetLayerName;
     [SerializeField] int probeID;
-    private LayerMask defaulLayerName;
+    private int defaulLayerName;
     private Color startColor;
 
-    [Header("Multimeter")]
-    [SerializeField] Multimeter multimeter;
+    [Header("MultimeterOrMegaommeter")]
+    [SerializeField] bool isMegaommeter;
 
     [Header("Outline")]
     [SerializeField] Outline outline;
@@ -69,15 +69,17 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
                 measurementPoint = null;
             }
 
-            measurementManager.ClearProbePoint(this);
             StartCoroutine(ProbeBackToMultimeter());
             ForceOutlineDisable();
+            measurementManager.ClearProbePoint(this);
 
             lastClickTime = 0;
             return;
         }
 
         lastClickTime = currentTime;
+
+        
 
         if(!isSelected)
         {
@@ -123,6 +125,16 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
         transform.parent = null;
         transform.gameObject.layer = targetLayerName;
+
+        foreach(Transform child in transform)
+        {
+            child.gameObject.layer = targetLayerName;
+        }
+
+        Debug.Log("LAYER " + gameObject.layer);
+
+        measurementManager.ClearProbePoint(this);
+
         yield return ProbeMove(probePosition.position,probePosition.eulerAngles);
 
         measurementPoint.SetSelectPoint(this);
@@ -146,6 +158,10 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     {
         //measurementPoint.SetBusyState(false);
         transform.gameObject.layer = defaulLayerName;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = defaulLayerName;
+        }
         transform.parent = currentParent;
 
         yield return ProbeMoveBack(startPosition,startRotation.eulerAngles);
@@ -174,5 +190,17 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     {
         outline.OutlineColor = startColor;
         outline.enabled = false;
+    }
+
+    public void ProbeStartPosition()
+    {
+        transform.parent = currentParent;
+        transform.localPosition = startPosition;
+        transform.localRotation = startRotation;
+    }
+
+    public void ForceCLear()
+    {
+        measurementManager.ClearProbePoint(this);
     }
 }

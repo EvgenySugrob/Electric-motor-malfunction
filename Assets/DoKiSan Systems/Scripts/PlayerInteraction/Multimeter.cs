@@ -201,6 +201,8 @@ public class Multimeter : MonoBehaviour,IInteractable
         foreach (MultimeterProbes probe in multimeterProbes)
         {
             probe.gameObject.SetActive(false);
+            probe.ProbeStartPosition();
+            probe.ForceCLear();
         }
 
         cameraOverlay.SetActive(false);
