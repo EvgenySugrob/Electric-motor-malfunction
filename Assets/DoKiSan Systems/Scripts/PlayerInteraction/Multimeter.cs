@@ -232,6 +232,7 @@ public class Multimeter : MonoBehaviour,IInteractable
         foreach (MultimeterProbes probe in multimeterProbes)
         {
             probe.ProbeBackAfterMeasurement();
+            probe.ForceCLear();
         }
 
         yield return new WaitForSeconds(0.5f);

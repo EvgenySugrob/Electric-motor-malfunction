@@ -61,7 +61,7 @@ public class MeasurementManager : MonoBehaviour
         if (megaommeterNeedle != null)
         {
             megaommeterNeedle
-                .DOLocalRotate(Vector3.zero, needleMoveDuration)
+                .DOLocalRotate(new Vector3(0, -89.5f,0), needleMoveDuration)
                 .SetEase(Ease.OutQuad)
                 .Play();
         }
@@ -75,12 +75,10 @@ public class MeasurementManager : MonoBehaviour
 
             if(mouseCursorHandler.GetCurrentInstrument().GetComponent<Multimeter>()==multimeter)
             {
-                Debug.Log("Ã”À‹“»Ã≈“– –≈«”À‹“¿“");
                 result = activeScenario.GetMultimeterResult(pointA, pointB);
             }
             else
             {
-                Debug.Log("Ã¿√¿ŒÃÃ≈“– –≈«”À‹“¿“");
                 result = activeScenario.GetMegaommeterResult(pointA, pointB);
             }
 

@@ -155,4 +155,13 @@ public class Megaommetr : MonoBehaviour, IInteractable
             .Play()
             .WaitForCompletion();
     }
+
+    public void ForceProbeBack()
+    {
+        foreach(MultimeterProbes probe in multimeterProbes)
+        {
+            probe.ProbeBackAfterMeasurement();
+            probe.ForceCLear();
+        }
+    }
 }

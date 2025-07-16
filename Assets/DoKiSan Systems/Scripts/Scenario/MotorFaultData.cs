@@ -10,7 +10,8 @@ public enum MotorFaultType
     WindingToCaseShort, // Замыкание обмотки на корпус
     SlipRingOrBrushFailure, // Выход из строя токосъемных колец или щеток
     ShaftJamming, // Заклинивание вала
-    BearingPlay // Люфт в подшипниках вала
+    BearingPlay, // Люфт в подшипниках вала
+    FailureOfTheBrushes
 }
 
 public enum DiagnosticToolType

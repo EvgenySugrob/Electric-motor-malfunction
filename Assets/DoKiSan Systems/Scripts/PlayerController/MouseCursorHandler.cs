@@ -257,7 +257,10 @@ public class MouseCursorHandler : MonoBehaviour
             currentInteractable = newInteractable;
         }
     }
-
+    public void ClearHand()
+    {
+        currentInstrument= null;
+    }
     public void SetCurrentInstrument(GameObject instrument)
     {
         currentInstrument = instrument;

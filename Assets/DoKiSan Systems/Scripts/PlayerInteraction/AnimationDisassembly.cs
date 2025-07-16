@@ -6,6 +6,14 @@ using System;
 
 public class AnimationDisassembly : MonoBehaviour
 {
+    [Header("WiresAndNuts")]
+    [SerializeField] bool isWiresAndNuts;
+    [SerializeField] List<WireMotor> wiresMotorList;
+    [SerializeField] List<WireBlocks> wiresBlocksList;
+    [SerializeField] List<NutsRotate> nutsRotateList;
+    [SerializeField] List<BoxCollider> collidersMeasuringPoints;
+    [SerializeField] MouseCursorHandler mouseCursorHandler;
+
     [Header("Brushes")]
     [SerializeField] bool isBrushes;
 
@@ -73,6 +81,29 @@ public class AnimationDisassembly : MonoBehaviour
 
     private void DefaultDetailDisassembly()
     {
+        if(isWiresAndNuts)
+        {
+            foreach (NutsRotate nut in nutsRotateList)
+            {
+                nut.RotationNuts(false);
+            }
+
+            foreach (WireBlocks wireBlocks in wiresBlocksList)
+            {
+                wireBlocks.RemoveWires(false);
+            }
+
+            foreach (WireMotor wireMotor in wiresMotorList)
+            {
+                wireMotor.RemoveWireMotor(false);
+            }
+
+            foreach (BoxCollider collider in collidersMeasuringPoints)
+            {
+                collider.enabled = true;
+            }
+        }
+
         if (mainVentylator != null)
         {
             Debug.Log("mainVentylator != null");
@@ -106,13 +137,6 @@ public class AnimationDisassembly : MonoBehaviour
         movePointSequence
             .SetEase(ease)
             .Play();
-
-        //DOTween.Sequence()
-        //    .Append(transform.DOMove(betweenPoint.position, durationBetween))
-        //    .Join(transform.DORotate(betweenPoint.eulerAngles, durationBetween / 2))
-        //    .Append(transform.DOMove(endPoint.position, durationEnd))
-        //    .Join(transform.DORotate(endPoint.eulerAngles, durationEnd))
-        //    .Play();
     }
 
     private void ScrewDisassembly()
@@ -137,13 +161,6 @@ public class AnimationDisassembly : MonoBehaviour
         movePointSequence
             .SetEase(ease)
             .Play();
-
-        //DOTween.Sequence()
-        //    .Append(transform.DOMove(betweenPoint.position, durationBetween))
-        //    .Join(transform.DOLocalRotate(new Vector3(0, 0, -360), durationBetween / 2, RotateMode.LocalAxisAdd))
-        //    .Append(transform.DOMove(endPoint.position, durationEnd))
-        //    .Join(transform.DORotate(endPoint.eulerAngles, durationEnd))
-        //    .Play();
     }
 
     private void ScrewAssembly()
@@ -168,7 +185,43 @@ public class AnimationDisassembly : MonoBehaviour
 
     private void DefaultDetailAssembly()
     {
-        if(childEnable!=null)
+        if (isWiresAndNuts)
+        {
+            foreach (NutsRotate nut in nutsRotateList)
+            {
+                nut.RotationNuts(true);
+            }
+
+            foreach (WireBlocks wireBlocks in wiresBlocksList)
+            {
+                wireBlocks.RemoveWires(true);
+            }
+
+            foreach (WireMotor wireMotor in wiresMotorList)
+            {
+                wireMotor.RemoveWireMotor(true);
+            }
+
+            foreach (BoxCollider collider in collidersMeasuringPoints)
+            {
+                collider.enabled = false;
+            }
+
+            if(mouseCursorHandler.GetCurrentInstrument()!=null)
+            {
+                GameObject instrument = mouseCursorHandler.GetCurrentInstrument();
+                if(instrument.GetComponent<Multimeter>())
+                {
+                    instrument.GetComponent<Multimeter>().ProbesBack();
+                }
+                else if(instrument.GetComponent<Megaommetr>())
+                {
+                    instrument.GetComponent<Megaommetr>().ForceProbeBack();
+                }
+            }
+        }
+
+        if (childEnable!=null)
         {
             waitForDisableChild = StartCoroutine(WaitForChildDisable());
         }

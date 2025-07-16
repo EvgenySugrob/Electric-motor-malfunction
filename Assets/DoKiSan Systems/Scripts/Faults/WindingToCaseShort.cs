@@ -29,22 +29,6 @@ public class WindingToCaseShort : FaultScenario, IMotorFaultTypeProvider
                (b == brokenPoint && a == "Ground");
     }
 
-    //public override MeasurementResult GetMeasurementResult(string pointA, string pointB)
-    //{
-    //    bool isBroken = (pointA == brokenPoint && pointB == "Ground") ||
-    //        (pointB == brokenPoint && pointA == "Ground");
-
-    //    if(isBroken)
-    //    {
-    //        return new MeasurementResult(GetDefectValue().ToString(), breakAngle);
-    //    }
-    //    else
-    //    {
-    //        float normalValue = GetNormalValue();
-    //        return new MeasurementResult(normalValue.ToString(), normalAngle);
-    //    }
-    //}
-
     public override MeasurementResult GetMultimeterResult(string a, string b)
     {
         if (IsBroken(a, b))

@@ -72,6 +72,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
             StartCoroutine(ProbeBackToMultimeter());
             ForceOutlineDisable();
             measurementManager.ClearProbePoint(this);
+            mouseCursorHandler.SetMultimeterProbe(null);
 
             lastClickTime = 0;
             return;
@@ -102,7 +103,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
             mouseCursorHandler.SetMultimeterProbe(null);
         }
     }
-
+ 
     public void SetMeasuringPoint(Transform probePosition)
     {
         measurementManager.EnableTextMoveProbe();
@@ -202,5 +203,6 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     public void ForceCLear()
     {
         measurementManager.ClearProbePoint(this);
+        mouseCursorHandler.SetMultimeterProbe(null);
     }
 }

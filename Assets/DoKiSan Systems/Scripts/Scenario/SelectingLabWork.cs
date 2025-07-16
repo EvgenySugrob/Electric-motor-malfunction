@@ -19,4 +19,14 @@ public class SelectingLabWork : MonoBehaviour
 
         SceneManager.LoadScene("Electro_engine_LabWork");
     }
+
+    public void OnMainMenuButtonClick()
+    {
+        SceneManager.LoadScene("Electro_engine_MainMenu");
+    }
+
+    public void ExitOnApp()
+    {
+        Application.Quit();
+    }
 }
