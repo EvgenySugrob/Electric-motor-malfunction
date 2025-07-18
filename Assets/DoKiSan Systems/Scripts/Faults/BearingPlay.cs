@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Faults/Выход из строя щеток")]
-public class FailureOfBrushes : FaultScenario,IMotorFaultTypeProvider
+[CreateAssetMenu(menuName = "Faults/Люфт вала")]
+public class BearingPlay : FaultScenario, IMotorFaultTypeProvider
 {
     [Header("Multimeter")]
     [SerializeField] private float minValue = 50.08f;
@@ -14,18 +14,12 @@ public class FailureOfBrushes : FaultScenario,IMotorFaultTypeProvider
 
     public override void InitializeScenario()
     {
-        Debug.Log("[Fault Init] Замена моделей щеток");
-        ReplaceModels();
+        Debug.Log($"[Fault Init] Люфт");
     }
 
-    public override void ReplaceModels()
+    public override MeasurementResult GetMegaommeterResult(string a, string b)
     {
-        FaultModelReplacer replacer = GameObject.FindObjectOfType<FaultModelReplacer>();
-
-        if (replacer != null)
-        {
-            replacer.OnlyBrushes();
-        }
+        return new MeasurementResult("0", normalAngle);
     }
 
     public override MeasurementResult GetMultimeterResult(string a, string b)
@@ -33,12 +27,7 @@ public class FailureOfBrushes : FaultScenario,IMotorFaultTypeProvider
         return new MeasurementResult(GetNormalValue().ToString(), 0f);
     }
 
-    public override MeasurementResult GetMegaommeterResult(string a, string b)
-    {
-        return new MeasurementResult("0", normalAngle); 
-    }
-
-    public MotorFaultType GetMotorFaultType() => MotorFaultType.FailureOfTheBrushes;
+    public MotorFaultType GetMotorFaultType() => MotorFaultType.BearingPlay;
 
     private float GetNormalValue()
     {

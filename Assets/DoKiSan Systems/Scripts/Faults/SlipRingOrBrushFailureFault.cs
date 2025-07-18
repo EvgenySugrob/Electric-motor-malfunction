@@ -30,12 +30,12 @@ public class SlipRingOrBrushFailureFault : FaultScenario, IMotorFaultTypeProvide
 
     public override MeasurementResult GetMultimeterResult(string a, string b)
     {
-        return new MeasurementResult(GetNormalValue().ToString(), 0f); // просто пример
+        return new MeasurementResult(GetNormalValue().ToString(), 0f); 
     }
 
     public override MeasurementResult GetMegaommeterResult(string a, string b)
     {
-        return new MeasurementResult("0", normalAngle); // просто пример
+        return new MeasurementResult("0", normalAngle); 
     }
 
     public MotorFaultType GetMotorFaultType() => MotorFaultType.SlipRingOrBrushFailure;

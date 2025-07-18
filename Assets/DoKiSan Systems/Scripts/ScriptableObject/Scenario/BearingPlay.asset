@@ -17,7 +17,8 @@ MonoBehaviour:
     \u0432\u0430\u043B\u0430"
   symptoms:
   - "\u0412\u0438\u0431\u0440\u0430\u0446\u0438\u044F"
+  - "\u041B\u044E\u0444\u0442"
   diagnosticTools: 
   diagnosticResult: 
   fixAction: 
-  measurementLogic: {fileID: 0}
+  measurementLogic: {fileID: 11400000, guid: 72a45c922cb07d44caff178b5113354e, type: 2}

@@ -94,7 +94,7 @@ public class MotorController : MonoBehaviour
         {
             switch (symptom)
             {
-                case "Люфт вала":
+                case "Люфт":
                     StartShaftPlay();
                     break;
                 case "Вибрация":

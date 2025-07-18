@@ -21,4 +21,4 @@ MonoBehaviour:
   diagnosticTools: 
   diagnosticResult: 
   fixAction: 
-  measurementLogic: {fileID: 0}
+  measurementLogic: {fileID: 11400000, guid: 3d27296e3f2d0df458be5994f4177d32, type: 2}
