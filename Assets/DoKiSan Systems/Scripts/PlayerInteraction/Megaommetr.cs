@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Megaommetr : MonoBehaviour, IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
     [Header("AnimationInHand")]
     [SerializeField] GameObject toolForHide;
     [SerializeField] List<Transform> pointsInHand;
@@ -14,6 +18,8 @@ public class Megaommetr : MonoBehaviour, IInteractable
 
     [Header("OutlineControl")]
     [SerializeField] Outline caseOutline;
+    [SerializeField] Color stepColorOutline;
+    private Color defaultColorOutline;
 
     [Header("Probes")]
     [SerializeField] List<MultimeterProbes> multimeterProbes;
@@ -37,15 +43,28 @@ public class Megaommetr : MonoBehaviour, IInteractable
 
         startPosition = transform.position;
         startRotation = transform.rotation;
+
+        defaultColorOutline = caseOutline.OutlineColor;
     }
 
     public void OnHoverEnter()
     {
+        if (IsHighlightedByScenario)
+        {
+            caseOutline.OutlineColor = defaultColorOutline;
+            return;
+        }
         caseOutline.enabled = true;
     }
 
     public void OnHoverExit()
     {
+        if (IsHighlightedByScenario)
+        {
+            caseOutline.OutlineColor = stepColorOutline;
+            return;
+        }
+
         caseOutline.enabled = false;
     }
 
@@ -162,6 +181,29 @@ public class Megaommetr : MonoBehaviour, IInteractable
         {
             probe.ProbeBackAfterMeasurement();
             probe.ForceCLear();
+        }
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = state;
+        if (caseOutline != null)
+        {
+            if (state)
+            {
+                caseOutline.OutlineColor = stepColorOutline;
+                caseOutline.enabled = true;
+            }
+            else
+            {
+                caseOutline.OutlineColor = defaultColorOutline;
+                caseOutline.enabled = false;
+            }
         }
     }
 }

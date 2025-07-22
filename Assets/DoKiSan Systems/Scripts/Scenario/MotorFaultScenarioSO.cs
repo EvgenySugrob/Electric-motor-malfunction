@@ -12,5 +12,7 @@ public class MotorFaultScenarioSO : ScriptableObject
     [TextArea] public string diagnosticResult;
     [TextArea] public string fixAction;
 
+    public List<InstructionStep> instructionSteps;
+
     public FaultScenario measurementLogic;
 }

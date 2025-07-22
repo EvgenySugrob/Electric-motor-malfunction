@@ -2916,9 +2916,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989477d92ec02544da19eafd816f4626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   multimeter: {fileID: 2140731289}
   mouseCursorHandler: {fileID: 963194229}
   caseOutline: {fileID: 1915220181}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
 --- !u!65 &91184215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6020,6 +6023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -6028,6 +6034,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -7177,6 +7184,141 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214173812}
   m_Mesh: {fileID: -6574626089113456786, guid: 79e27ee317c5a68479271090dfa12d6b, type: 3}
+--- !u!1 &215380809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215380812}
+  - component: {fileID: 215380811}
+  - component: {fileID: 215380810}
+  m_Layer: 5
+  m_Name: InstructionText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &215380810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215380809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a6255ef908e1738428edb26d54a082a8, type: 2}
+  m_sharedMaterial: {fileID: -1086495687144407167, guid: a6255ef908e1738428edb26d54a082a8,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &215380811
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215380809}
+  m_CullTransparentMesh: 1
+--- !u!224 &215380812
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215380809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1233108862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -170}
+  m_SizeDelta: {x: 1410.8, y: 165.38}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &216194755
 GameObject:
   m_ObjectHideFlags: 0
@@ -9525,6 +9667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -9533,6 +9678,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -9689,6 +9835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 7251477111226765813}
@@ -9702,6 +9851,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -9718,6 +9868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -9726,6 +9879,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -9763,6 +9917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -9771,6 +9928,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -10150,11 +10308,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: U2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 299197268}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &299197268
 MonoBehaviour:
@@ -11835,6 +11996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Kolodka_cap_screw_2
+  IsHighlightedByScenario: 0
+  triggerName: ScrewRemove2
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -11843,6 +12007,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -12328,6 +12493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -12336,6 +12504,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -12539,11 +12708,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: W1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 372511718}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &372511718
 MonoBehaviour:
@@ -12680,6 +12852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isSelected: 0
@@ -12688,6 +12862,7 @@ MonoBehaviour:
   probeID: 0
   isMegaommeter: 1
   outline: {fileID: 345876291}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!65 &374867392
@@ -13654,6 +13829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Kolodka_cap
+  IsHighlightedByScenario: 0
+  triggerName: RemoveCap
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 1976310462511797555}
@@ -13666,6 +13844,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -14967,6 +15146,51 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &467279110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467279112}
+  - component: {fileID: 467279111}
+  m_Layer: 0
+  m_Name: InstructionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &467279111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467279110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286c5dde99712b14d985c547f66f8bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText: {fileID: 215380810}
+--- !u!4 &467279112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467279110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 67, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &475591794 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 269041941223509833, guid: b818017d8cbb1434fab2538de636e6fa,
@@ -15312,11 +15536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: Ground
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 693468181}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 7937641866946997937}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &482906716
 MonoBehaviour:
@@ -17491,6 +17718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800c521a78de0684398b8abb499fbb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   toolForHide: {fileID: 502023365}
   pointsInHand:
   - {fileID: 945939341}
@@ -17498,6 +17727,7 @@ MonoBehaviour:
   - {fileID: 304377687}
   durationBetweenPoint: 0.5
   caseOutline: {fileID: 122873599}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   multimeterProbes:
   - {fileID: 374867391}
   - {fileID: 2144775746}
@@ -20133,6 +20363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 4683287526054925211}
@@ -20142,6 +20375,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -22893,6 +23127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 0}
   prerequisiteObjects:
   - {fileID: 8269950684225676201}
@@ -22902,6 +23139,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   isDisassembled: 0
   powerSwitch: {fileID: 0}
   animationDisassembly: {fileID: 0}
@@ -25790,11 +26028,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: V2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 748628673}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &748628673
 MonoBehaviour:
@@ -30339,6 +30580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -30347,6 +30591,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -30384,6 +30629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -30392,6 +30640,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -30450,6 +30699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -30458,6 +30710,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -32998,6 +33251,51 @@ Transform:
   - {fileID: 1022308002}
   m_Father: {fileID: 1112183740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935517746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935517748}
+  - component: {fileID: 935517747}
+  m_Layer: 0
+  m_Name: HighlightController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &935517747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935517746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964a288273e933e4ea0423675a92c699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentlyHighlighted: []
+--- !u!4 &935517748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935517746}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &940177418
 GameObject:
   m_ObjectHideFlags: 0
@@ -35196,6 +35494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -35204,6 +35505,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -36205,6 +36507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Kolodka_cap_screw_3
+  IsHighlightedByScenario: 0
+  triggerName: ScrewRemove1
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -36213,6 +36518,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -36770,7 +37076,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c590ded4167b4448fc607ccded07db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   outline: {fileID: 1052698140}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   eulerRotation: {x: 0, y: 180, z: 0}
   eulerRotationBack: {x: 0, y: 0, z: 0}
   duration: 0.25
@@ -37290,6 +37599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Kolodka_cap_screw_4
+  IsHighlightedByScenario: 0
+  triggerName: ScrewRemove3
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -37298,6 +37610,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -37408,6 +37721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -37416,6 +37731,7 @@ MonoBehaviour:
   probeID: 1
   isMegaommeter: 0
   outline: {fileID: 488257122}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!1 &1090638022
@@ -38003,6 +38319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 1086923121915213564}
@@ -38011,6 +38330,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -38337,6 +38657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 7891225956440605937}
@@ -38352,6 +38675,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -38727,6 +39051,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -38735,6 +39062,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -43202,6 +43530,7 @@ RectTransform:
   - {fileID: 8184335151915460176}
   - {fileID: 308919127}
   - {fileID: 1186373823}
+  - {fileID: 215380812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -43726,11 +44055,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: U1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1246162692}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &1246162692
 MonoBehaviour:
@@ -45541,6 +45873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -45549,6 +45884,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -45604,6 +45940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Kolodka_cap_screw_1
+  IsHighlightedByScenario: 0
+  triggerName: ScrewRemove4
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -45612,6 +45951,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -49329,6 +49669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 4683287526054925211}
@@ -49338,6 +49681,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -49820,6 +50164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -49828,6 +50175,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -58062,6 +58410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 4683287526054925211}
@@ -58071,6 +58422,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -59184,11 +59536,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: V1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1689372253}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &1689372253
 MonoBehaviour:
@@ -60895,11 +61250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   pointId: W2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1739834735}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   currentProbe: {fileID: 0}
 --- !u!114 &1739834735
 MonoBehaviour:
@@ -66101,6 +66459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -66109,6 +66469,7 @@ MonoBehaviour:
   probeID: 0
   isMegaommeter: 0
   outline: {fileID: 1768393663}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!1 &1882675327
@@ -66574,6 +66935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 4683287526054925211}
@@ -66583,6 +66947,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -67971,12 +68336,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8a027322fe9d544a0c4b42015be5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: Ruchka
+  IsHighlightedByScenario: 0
   motorController: {fileID: 290835719}
   assembleManager: {fileID: 1233108863}
   outline: {fileID: 1918923734}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   durationAnimation: 0.5
   angleRotate: {x: 180, y: 0, z: 0}
   isOn: 0
+  defaultColorOutline: {r: 1, g: 0.4, b: 0, a: 1}
 --- !u!114 &1918923734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73086,6 +73455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 0}
   prerequisiteObjects:
   - {fileID: 8269950684225676201}
@@ -73095,6 +73467,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   isDisassembled: 0
   powerSwitch: {fileID: 0}
   animationDisassembly: {fileID: 0}
@@ -73798,9 +74171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fbe2b2539c23a48be4ed545846ee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   megaommetr: {fileID: 531709971}
   mouseCursorHandler: {fileID: 963194229}
   caseoutline: {fileID: 710553883}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
 --- !u!1 &2073655731
 GameObject:
   m_ObjectHideFlags: 0
@@ -75427,6 +75803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -75435,6 +75813,7 @@ MonoBehaviour:
   probeID: 0
   isMegaommeter: 0
   outline: {fileID: 1865795718}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 0}
 --- !u!4 &2122091437
@@ -75984,6 +76363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4667a78ccfb6f94cb0ee613878c2722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   toolForHide: {fileID: 982662434}
   pointsInHand:
   - {fileID: 1206142185}
@@ -75994,6 +76375,7 @@ MonoBehaviour:
   - {fileID: 1881130442}
   - {fileID: 1089883018}
   caseOutline: {fileID: 491732242}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   cameraController: {fileID: 963194230}
   cursorHandler: {fileID: 963194229}
   isInHand: 0
@@ -76114,6 +76496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isSelected: 0
@@ -76122,6 +76506,7 @@ MonoBehaviour:
   probeID: 1
   isMegaommeter: 1
   outline: {fileID: 878198627}
+  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!65 &2144775747
@@ -111141,6 +111526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 8269950684225676201}
@@ -111151,6 +111539,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -111585,6 +111974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 3549528175332634293}
@@ -111594,6 +111986,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -113762,6 +114155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 7395483555916734184}
@@ -113774,6 +114170,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -116260,6 +116657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectID: 
+  IsHighlightedByScenario: 0
+  triggerName: 
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 2589066611643158341}
@@ -116273,6 +116673,7 @@ MonoBehaviour:
   isAnimated: 0
   isInitiallyActive: 1
   outline: {fileID: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -121245,3 +121646,5 @@ SceneRoots:
   - {fileID: 2069414004}
   - {fileID: 914613083}
   - {fileID: 177621096}
+  - {fileID: 467279112}
+  - {fileID: 935517748}

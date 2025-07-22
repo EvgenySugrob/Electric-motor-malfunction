@@ -4,28 +4,53 @@ using UnityEngine;
 
 public class MeasurementPoint : MonoBehaviour,IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
     public string pointId;
     [SerializeField] MeasurementManager measurementManager;
     [SerializeField] Transform probePosition;
     [SerializeField] MouseCursorHandler mouseCursorHandler;
     [SerializeField] Outline outline;
+    [SerializeField] Color stepColorOutline;
     [SerializeField] private MultimeterProbes currentProbe;
     private bool isBusy = false;
+    private Color defaultColorOutline;
+
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
 
     private void Start()
     {
+        defaultColorOutline = outline.OutlineColor;
         probePosition = transform.GetChild(0).transform;
     }
 
     public void OnHoverEnter()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = defaultColorOutline;
+            return;
+        }
+            
+
         if(mouseCursorHandler.GetMultimeterProbe()!=null)
             outline.enabled = true;
     }
 
     public void OnHoverExit()
     {
-        if(mouseCursorHandler.GetMultimeterProbe()!=null)
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = stepColorOutline;
+            return;
+        }
+            
+        if (mouseCursorHandler.GetMultimeterProbe()!=null)
             outline.enabled = false;
     }
 
@@ -66,5 +91,28 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
     private void ForceDisableOutline()
     {
         outline.enabled= false;
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = state;
+        if (outline!=null)
+        {
+            if(state)
+            {
+                outline.OutlineColor = stepColorOutline;
+                outline.enabled = true;
+            }
+            else
+            {
+                outline.OutlineColor = defaultColorOutline;
+                outline.enabled = false;
+            }
+        }
     }
 }

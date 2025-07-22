@@ -6,12 +6,18 @@ using DG.Tweening;
 
 public class MultimetrModeWheel : MonoBehaviour, IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] bool IsHighlightedByScenario;
+
     [Header("ModeWheel")]
     [SerializeField] Outline outline;
+    [SerializeField] Color stepColorOutline;
     [SerializeField] Vector3 eulerRotation;
     [SerializeField] Vector3 eulerRotationBack;
     [SerializeField] float duration = 0.25f;
     private BoxCollider boxCollider;
+    private Color defaultColorOutline;
 
     [Header("DisplayMultimeter")]
     [SerializeField] TMP_Text numbersText;
@@ -21,6 +27,7 @@ public class MultimetrModeWheel : MonoBehaviour, IInteractable
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+        defaultColorOutline = outline.OutlineColor;
     }
 
     public void WheelColliderState(bool isState)
@@ -30,11 +37,21 @@ public class MultimetrModeWheel : MonoBehaviour, IInteractable
 
     public void OnHoverEnter()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = defaultColorOutline;
+            return;
+        }
         outline.enabled = true;
     }
 
     public void OnHoverExit()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = stepColorOutline;
+            return;
+        }
         outline.enabled = false;
     }
 
@@ -75,5 +92,28 @@ public class MultimetrModeWheel : MonoBehaviour, IInteractable
         }
             
         renderPart.SetActive(false);
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = true;
+        if (outline != null)
+        {
+            if (state)
+            {
+                outline.OutlineColor = stepColorOutline;
+                outline.enabled = true;
+            }
+            else
+            {
+                outline.OutlineColor = defaultColorOutline;
+                outline.enabled = false;
+            }
+        }
     }
 }

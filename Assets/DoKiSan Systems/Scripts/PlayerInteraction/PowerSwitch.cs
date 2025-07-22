@@ -5,21 +5,47 @@ using DG.Tweening;
 
 public class PowerSwitch : MonoBehaviour, IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
     [Header("Main Setting")]
     [SerializeField] MotorController motorController;
     [SerializeField] AssembleManager assembleManager;
     [SerializeField] Outline outline;
+    [SerializeField] Color stepColorOutline;
     [SerializeField] float durationAnimation = 0.5f;
     [SerializeField] Vector3 angleRotate = new Vector3(0,0,0);
     [SerializeField]private bool isOn = false;
+    [SerializeField]private Color defaultColorOutline;
+
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
+
+    private void Start()
+    {
+        defaultColorOutline = outline.OutlineColor;
+    }
 
     public void OnHoverEnter()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = defaultColorOutline;
+            return;
+        }
         outline.enabled = true;
     }
 
     public void OnHoverExit()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = stepColorOutline;
+            return;
+        }
         outline.enabled = false;
     }
 
@@ -37,6 +63,16 @@ public class PowerSwitch : MonoBehaviour, IInteractable
             .WaitForCompletion();
 
         isOn = !isOn;
+
+        if(isOn)
+        {
+            InstructionManager.Instance.OnEventTriggered("SwitchOn",2f);
+        }
+        else
+        {
+            InstructionManager.Instance.OnEventTriggered("SwitchOff",0);
+        }
+
         if (!motorController.GetIsStopedNow())
         {
             motorController.ActiveMotorButtonClick();
@@ -46,5 +82,30 @@ public class PowerSwitch : MonoBehaviour, IInteractable
     public bool GetIsOn()
     {
         return isOn;
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        Debug.Log($"{gameObject.name} | {state}");
+        IsHighlightedByScenario = state;
+        if (outline != null)
+        {
+            if (state)
+            {
+                Debug.Log($"{gameObject.name} | {state}  SOSISS");
+                outline.OutlineColor = stepColorOutline;
+                outline.enabled = true;
+            }
+            else
+            {
+                outline.OutlineColor = defaultColorOutline;
+                outline.enabled = false;
+            }
+        }
     }
 }

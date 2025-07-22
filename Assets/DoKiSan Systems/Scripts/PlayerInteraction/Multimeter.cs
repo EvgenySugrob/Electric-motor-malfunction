@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Multimeter : MonoBehaviour,IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
     [Header("AnimationInHand")]
     [SerializeField] GameObject toolForHide;
     [SerializeField] List<Transform> pointsInHand;
@@ -17,6 +21,8 @@ public class Multimeter : MonoBehaviour,IInteractable
 
     [Header("OutlineControl")]
     [SerializeField] Outline caseOutline;
+    [SerializeField] Color stepColorOutline;
+    private Color defaultColorOutline;
 
     [Header("PlayerControl")]
     [SerializeField] CameraController cameraController;
@@ -35,21 +41,38 @@ public class Multimeter : MonoBehaviour,IInteractable
 
     private BoxCollider mainCollider;
 
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
+
     private void Start()
     {
         mainCollider = GetComponent<BoxCollider>();
 
         startPosition = transform.position;
         startRotation = transform.rotation;
+
+        defaultColorOutline = caseOutline.OutlineColor;
     }
 
     public void OnHoverEnter()
     {
+        if (IsHighlightedByScenario)
+        {
+            caseOutline.OutlineColor = defaultColorOutline;
+            return;
+        }
         caseOutline.enabled = true;
     }
 
     public void OnHoverExit()
     {
+        if (IsHighlightedByScenario)
+        {
+            caseOutline.OutlineColor = stepColorOutline;
+            return;
+        }
         caseOutline.enabled = false;
     }
 
@@ -238,5 +261,28 @@ public class Multimeter : MonoBehaviour,IInteractable
         yield return new WaitForSeconds(0.5f);
 
         PlayerControlDisable(true);
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = state;
+        if (caseOutline != null)
+        {
+            if (state)
+            {
+                caseOutline.OutlineColor = stepColorOutline;
+                caseOutline.enabled = true;
+            }
+            else
+            {
+                caseOutline.OutlineColor = defaultColorOutline;
+                caseOutline.enabled = false;
+            }
+        }
     }
 }

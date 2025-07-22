@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
+    [Header("Trigger Steps")]
+    [SerializeField] private string triggerName;
+
     [SerializeField] private MotorController motorController;
     [SerializeField] private GameObject[] prerequisiteObjects; // Предшественники как GameObject
     [SerializeField] private GameObject[] nextRequisiteObjects;
@@ -11,7 +18,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [SerializeField] private bool isAnimated = false; // Использовать анимацию
     [SerializeField] private bool isInitiallyActive = true; // Состояние по умолчанию
     [SerializeField] private Outline outline;
-    private Color originalColor;
+    [SerializeField] private Color stepColorOutline;
+    private Color defaultColorOutline;
     private Animator animator;
     [SerializeField] private bool isDisassembled = false; // Состояние разборки
     [SerializeField] private PowerSwitch powerSwitch;
@@ -21,6 +29,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     [Header("Outline")]
     [SerializeField] List<Outline> childsOutline;
+
 
     public GameObject[] PrerequisiteObjects
     {
@@ -46,11 +55,17 @@ public class InteractableObject : MonoBehaviour, IInteractable
         set => isDisassembled = value;
     }
 
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
 
     private void Start()
     {
         animationDisassembly = GetComponent<AnimationDisassembly>();
         outline= GetComponent<Outline>();
+        if(outline!=null)
+            defaultColorOutline = outline.OutlineColor;
     }
 
     public void OnInteract()
@@ -71,7 +86,26 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnHoverEnter()
     {
-        if(outline != null)
+        //if ((isDisassembled && CanAssemble()) || (!isDisassembled && CanDisassemble()))
+        //{
+        //    //EnableHighlight();
+        //}
+        if(IsHighlightedByScenario)
+        {
+            if(outline!=null)
+            {
+                outline.OutlineColor = defaultColorOutline;
+            }
+            else
+            {
+                foreach (Outline childOutline in childsOutline)
+                {
+                    childOutline.OutlineColor = defaultColorOutline;
+                }
+            }
+        }
+
+        if (outline != null)
         {
             if ((isDisassembled && CanAssemble()) || (!isDisassembled && CanDisassemble()))
             {
@@ -92,9 +126,15 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnHoverExit()
     {
-        Debug.Log(name+ " HoverExit");
+        //DisableHighlight();
 
-        if(outline != null)
+        if(IsHighlightedByScenario)
+        {
+            outline.OutlineColor = stepColorOutline;
+            return;
+        }
+
+        if (outline != null)
         {
             outline.enabled = false;
         }
@@ -105,6 +145,79 @@ public class InteractableObject : MonoBehaviour, IInteractable
                 childOutline.enabled = false;
             }
         }
+    }
+
+    public void EnableHighlight()
+    {
+        if (outline != null)
+        {   
+            if(IsHighlightedByScenario)
+            {
+                outline.OutlineColor = stepColorOutline;
+            }
+            outline.enabled = true;
+        }
+        else if (childsOutline != null)
+        {
+            foreach (var o in childsOutline)
+            {
+                if (o != null)
+                {
+                    if(IsHighlightedByScenario)
+                        o.OutlineColor = stepColorOutline;
+
+                    o.enabled = true;
+                }
+            } 
+        }
+    }
+
+    public void DisableHighlight()
+    {
+        if (outline != null)
+        {
+            outline.enabled = false;
+            outline.OutlineColor = defaultColorOutline;
+        }
+        else if (childsOutline != null)
+        {
+            foreach (var o in childsOutline)
+            {
+                if (o != null)
+                {
+                    o.enabled = false;
+                    if (IsHighlightedByScenario)
+                        o.OutlineColor = defaultColorOutline;
+                }
+            }                
+        }
+    }
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = state;
+
+        if (state)
+        {
+            EnableHighlight();
+        }
+        else
+        {
+            DisableHighlight();
+        }
+            
+        //if (outline != null)
+        //{
+        //    if (state)
+        //    {
+        //        outline.OutlineColor = stepColorOutline;
+        //        EnableHighlight();
+        //    }
+        //    else
+        //    {
+        //        outline.OutlineColor = defaultColorOutline;
+        //        DisableHighlight();
+        //    }
+        //}
     }
 
     private bool CanDisassemble()
@@ -122,6 +235,11 @@ public class InteractableObject : MonoBehaviour, IInteractable
             }
         }
         return true;
+    }
+
+    private void CheckedForNextStep()
+    {
+        InstructionManager.Instance.OnEventTriggered(triggerName,0);
     }
 
     public bool CanAssemble()
@@ -161,6 +279,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
         }
         isDisassembled = true;
         AssembleManager.Instance.AddDisassembledObject(this); // Добавляем в список разобранных
+
+        CheckedForNextStep();
     }
 
     private void Assemble()
@@ -188,5 +308,15 @@ public class InteractableObject : MonoBehaviour, IInteractable
             if (obj != null)
                 obj.SetActive(true);
         }
+    }
+
+    private void OnDestroy()
+    {
+        HighlightRegistry.Unregister(objectID);
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
     }
 }

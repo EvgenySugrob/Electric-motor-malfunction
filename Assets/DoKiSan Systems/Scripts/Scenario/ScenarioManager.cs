@@ -76,6 +76,20 @@ public class ScenarioManager : MonoBehaviour
         ConfigureMotorSymptoms();
         ConfigureDiagnosticTools();
         ConfigureFixAction();
+        ConfigurableInstruction();
+    }
+
+    private void ConfigurableInstruction()
+    {
+        if (!isExamMode && currentScenario.instructionSteps != null && currentScenario.instructionSteps.Count > 0)
+        {
+            StartCoroutine(StartScenarioRoutine());
+        }
+    }
+    private IEnumerator StartScenarioRoutine()
+    {
+        yield return new WaitForSeconds(1f); // дожидаемся всех Awake()
+        InstructionManager.Instance.StartInstructions(currentScenario.instructionSteps);
     }
 
     private void ConfigureMeasurementLogic()

@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class MultimeterProbes : MonoBehaviour, IInteractable
 {
+    [Header("ID object")]
+    [SerializeField] private string objectID;
+    [SerializeField] public bool IsHighlightedByScenario = false;
+
     [Header("ProbeInteraction")]
     [SerializeField] MouseCursorHandler mouseCursorHandler;
     [SerializeField] Color colorSelected;
@@ -21,6 +25,8 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
 
     [Header("Outline")]
     [SerializeField] Outline outline;
+    [SerializeField] Color stepColorOutline;
+    private Color defaultColorOutline;
 
     [Header("MeasurementPoint")]
     [SerializeField] MeasurementPoint measurementPoint;
@@ -33,6 +39,11 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     private float lastClickTime = 0f;
     private float doubleClickThreshold = 0.3f;
 
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
+
     private void Start()
     {
         defaulLayerName = transform.gameObject.layer;
@@ -43,6 +54,8 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
         currentParent = transform.parent;
 
         startColor = outline.OutlineColor;
+
+        defaultColorOutline = outline.OutlineColor;
     }
 
     public void OnHoverEnter()
@@ -204,5 +217,28 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     {
         measurementManager.ClearProbePoint(this);
         mouseCursorHandler.SetMultimeterProbe(null);
+    }
+
+    public string GetObjectID()
+    {
+        return objectID;
+    }
+
+    public void SetHighlight(bool state)
+    {
+        IsHighlightedByScenario = state;
+        if (outline != null)
+        {
+            if (state)
+            {
+                outline.OutlineColor = stepColorOutline;
+                outline.enabled = true;
+            }
+            else
+            {
+                outline.OutlineColor = defaultColorOutline;
+                outline.enabled = false;
+            }
+        }
     }
 }

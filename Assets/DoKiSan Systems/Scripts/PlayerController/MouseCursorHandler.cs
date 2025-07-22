@@ -285,4 +285,8 @@ public interface IInteractable
     void OnInteract();
     void OnHoverEnter();
     void OnHoverExit();
+
+    string GetObjectID();
+
+    void SetHighlight(bool state);
 }
