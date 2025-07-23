@@ -24,6 +24,9 @@ public class HighlightController : MonoBehaviour
     {
         foreach (var go in currentlyHighlighted)
         {
+            if (go == null)
+                continue;
+
             Outline outline = go.GetComponent<Outline>();
             if (outline != null)
                 outline.enabled = false;
@@ -85,5 +88,4 @@ public class HighlightController : MonoBehaviour
             }
         }
     }
-
 }

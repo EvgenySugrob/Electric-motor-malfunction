@@ -14,6 +14,7 @@ public class InstructionManager : MonoBehaviour
     private List<InstructionStep> steps;
     private int currentStep = 0;
     private HashSet<string> triggeredEvents = new();
+    [SerializeField] private GameObject instructionalPanel;
 
     private void Awake()
     {
@@ -34,6 +35,12 @@ public class InstructionManager : MonoBehaviour
             return;
         }
 
+        if(instructionalPanel==null)
+        {
+            instructionalPanel = GameObject.FindGameObjectWithTag("InstructionalPanel");
+        }
+
+        instructionalPanel.SetActive(true);
         steps = instructionSteps;
         currentStep = 0;
         ShowCurrentStep();
@@ -73,7 +80,15 @@ public class InstructionManager : MonoBehaviour
     private IEnumerator WaitSecondToNextStep(float waitTimeToNextStep)
     {
         instructionText.text = "";
+
+        if(instructionalPanel!=null && waitTimeToNextStep>0)
+        {
+            instructionalPanel.SetActive(false);
+        }
+
         yield return new WaitForSeconds(waitTimeToNextStep);
+
+        instructionalPanel.SetActive(true);
         ShowCurrentStep();
     }
 

@@ -25,18 +25,17 @@ MonoBehaviour:
   - stepText: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C.
       \u041F\u0440\u043E\u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0439\u0442\u0435
       \u0437\u0430 \u0435\u0433\u043E \u0440\u0430\u0431\u043E\u0442\u043E\u0439."
-    expectedEvent: SwitchOn
     objectIDsToHighlight:
     - Ruchka
-    requiredEvents: []
+    requiredEvents:
+    - SwitchOn
   - stepText: "\u0412\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
-    expectedEvent: SwitchOff
     objectIDsToHighlight:
     - Ruchka
-    requiredEvents: []
+    requiredEvents:
+    - SwitchOff
   - stepText: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u0442\u0435 \u0431\u043E\u043B\u0442\u044B
-      \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
-    expectedEvent: 
+      \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
     objectIDsToHighlight:
     - Kolodka_cap_screw_1
     - Kolodka_cap_screw_2
@@ -48,9 +47,17 @@ MonoBehaviour:
     - ScrewRemove3
     - ScrewRemove4
   - stepText: "\u0421\u043D\u0438\u043C\u0438\u0442\u0435 \u043A\u0440\u044B\u0448\u043A\u0443
-      \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
-    expectedEvent: RemoveCap
+      \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
     objectIDsToHighlight:
     - Kolodka_cap
-    requiredEvents: []
+    requiredEvents:
+    - RemoveCap
+  - stepText: "\u0414\u0435\u043C\u043E\u043D\u0442\u0438\u0440\u0443\u0439\u0442\u0435
+      \u043F\u0435\u0440\u0435\u043C\u044B\u0447\u043A\u0438 \u0438 \u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
+      \u043F\u0440\u043E\u0432\u043E\u0434\u0430 \u043E\u0442 \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439
+      \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+    objectIDsToHighlight:
+    - WiresAngNuts
+    requiredEvents:
+    - WiresRemove
   measurementLogic: {fileID: 11400000, guid: 8f162d980ae2fb249b4badb23495574d, type: 2}

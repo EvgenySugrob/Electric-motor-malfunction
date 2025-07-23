@@ -7,7 +7,6 @@ using System;
 public class InstructionStep
 {
     public string stepText;
-    public string expectedEvent;
     public List<string> objectIDsToHighlight;
     public List<string> requiredEvents;
 }

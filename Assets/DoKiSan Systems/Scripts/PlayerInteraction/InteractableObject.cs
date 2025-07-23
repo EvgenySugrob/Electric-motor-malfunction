@@ -19,7 +19,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [SerializeField] private bool isInitiallyActive = true; // Состояние по умолчанию
     [SerializeField] private Outline outline;
     [SerializeField] private Color stepColorOutline;
-    private Color defaultColorOutline;
+    [SerializeField] private Color defaultColorOutline;
     private Animator animator;
     [SerializeField] private bool isDisassembled = false; // Состояние разборки
     [SerializeField] private PowerSwitch powerSwitch;
@@ -130,7 +130,18 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
         if(IsHighlightedByScenario)
         {
-            outline.OutlineColor = stepColorOutline;
+            if(outline!=null)
+            {
+                outline.OutlineColor = stepColorOutline;
+            }
+            else
+            {
+                foreach (Outline childOutline in childsOutline)
+                {
+                    childOutline.OutlineColor = stepColorOutline;
+                }
+            }
+            
             return;
         }
 
@@ -240,6 +251,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private void CheckedForNextStep()
     {
         InstructionManager.Instance.OnEventTriggered(triggerName,0);
+        IsHighlightedByScenario = false;
     }
 
     public bool CanAssemble()

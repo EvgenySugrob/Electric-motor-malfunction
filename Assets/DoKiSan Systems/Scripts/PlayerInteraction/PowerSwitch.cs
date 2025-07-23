@@ -8,6 +8,7 @@ public class PowerSwitch : MonoBehaviour, IInteractable
     [Header("ID object")]
     [SerializeField] private string objectID;
     [SerializeField] public bool IsHighlightedByScenario = false;
+    [SerializeField] float timeWait=3f;
 
     [Header("Main Setting")]
     [SerializeField] MotorController motorController;
@@ -66,7 +67,7 @@ public class PowerSwitch : MonoBehaviour, IInteractable
 
         if(isOn)
         {
-            InstructionManager.Instance.OnEventTriggered("SwitchOn",2f);
+            InstructionManager.Instance.OnEventTriggered("SwitchOn",timeWait);
         }
         else
         {
@@ -91,8 +92,13 @@ public class PowerSwitch : MonoBehaviour, IInteractable
 
     public void SetHighlight(bool state)
     {
+        if (this == null) return; // защита от уничтоженного объекта
+        if (gameObject == null) return;
+
         Debug.Log($"{gameObject.name} | {state}");
+
         IsHighlightedByScenario = state;
+
         if (outline != null)
         {
             if (state)

@@ -171,6 +171,7 @@ public class CameraController : MonoBehaviour
         cameraPosition.x = Mathf.Clamp(cameraPosition.x, horizontalBounds.x, horizontalBounds.y);
         cameraPosition.z = Mathf.Clamp(cameraPosition.z, depthBounds.x, depthBounds.y);
         cameraPosition.y = Mathf.Clamp(cameraPosition.y, minHeight, maxHeight);
+
     }
 
     private void UpdateCameraPosition()
