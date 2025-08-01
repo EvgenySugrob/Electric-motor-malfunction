@@ -21,4 +21,17 @@ MonoBehaviour:
   diagnosticTools: 
   diagnosticResult: 
   fixAction: 
+  instructionSteps:
+  - stepText: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C.
+      \u041F\u0440\u043E\u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0439\u0442\u0435
+      \u0437\u0430 \u0435\u0433\u043E \u0440\u0430\u0431\u043E\u0442\u043E\u0439."
+    objectIDsToHighlight:
+    - Ruchka
+    requiredEvents:
+    - SwitchOn
+  - stepText: "\u0412\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C."
+    objectIDsToHighlight:
+    - Ruchka
+    requiredEvents:
+    - SwitchOff
   measurementLogic: {fileID: 11400000, guid: 72a45c922cb07d44caff178b5113354e, type: 2}

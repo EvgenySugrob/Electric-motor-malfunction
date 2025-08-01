@@ -24,6 +24,11 @@ public class MultimetrModeWheel : MonoBehaviour, IInteractable
     [SerializeField] GameObject renderPart;
     private bool isOn = false;
 
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -64,6 +69,7 @@ public class MultimetrModeWheel : MonoBehaviour, IInteractable
         else
         {
             isOn= true;
+            InstructionManager.Instance.OnEventTriggered("ModeWheelClick", 0);
         }
         StartCoroutine(RotationModeWheel(isOn));
     }

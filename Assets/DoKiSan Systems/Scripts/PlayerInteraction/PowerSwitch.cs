@@ -95,15 +95,12 @@ public class PowerSwitch : MonoBehaviour, IInteractable
         if (this == null) return; // защита от уничтоженного объекта
         if (gameObject == null) return;
 
-        Debug.Log($"{gameObject.name} | {state}");
-
         IsHighlightedByScenario = state;
 
         if (outline != null)
         {
             if (state)
             {
-                Debug.Log($"{gameObject.name} | {state}  SOSISS");
                 outline.OutlineColor = stepColorOutline;
                 outline.enabled = true;
             }

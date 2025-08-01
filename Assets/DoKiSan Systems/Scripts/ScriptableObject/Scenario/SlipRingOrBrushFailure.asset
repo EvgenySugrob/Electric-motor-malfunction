@@ -14,12 +14,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faultType: 4
   description: "\u0412\u044B\u0445\u043E\u0434 \u0438\u0437 \u0441\u0442\u0440\u043E\u044F
-    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u043D\u044B\u0445 \u043A\u043E\u043B\u0435\u0446
-    \u0438\u043B\u0438 \u0449\u0435\u0442\u043E\u043A"
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u043D\u044B\u0445 \u043A\u043E\u043B\u0435\u0446"
   symptoms:
   - "\u041F\u0435\u0440\u0435\u0431\u043E\u0438"
   - "\u0418\u0441\u043A\u0440\u0435\u043D\u0438\u0435"
   diagnosticTools: 
   diagnosticResult: 
   fixAction: 
+  instructionSteps:
+  - stepText: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C.
+      \u041F\u0440\u043E\u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0439\u0442\u0435
+      \u0437\u0430 \u0435\u0433\u043E \u0440\u0430\u0431\u043E\u0442\u043E\u0439."
+    objectIDsToHighlight:
+    - Ruchka
+    requiredEvents:
+    - SwitchOn
+  - stepText: "\u0412\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C."
+    objectIDsToHighlight:
+    - Ruchka
+    requiredEvents:
+    - SwitchOff
+  - stepText: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u0442\u0435 \u0431\u043E\u043B\u0442\u044B
+      \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+    objectIDsToHighlight:
+    - Screw_UT_1
+    - Screw_UT_2
+    - Screw_UT_3
+    - Screw_UT_4
+    requiredEvents:
+    - ScrewUT1Up
+    - ScrewUT2Up
+    - ScrewUT3Up
+    - ScrewUT4Up
+  - stepText: "\u0421\u043D\u0438\u043C\u0438\u0442\u0435 \u043A\u0440\u044B\u0448\u043A\u0443
+      \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+    objectIDsToHighlight:
+    - Uzel_tokosyema_cap
+    requiredEvents:
+    - UzelTokosyemaCapUP
+  - stepText: "\u0418\u0437\u0432\u043B\u0435\u043A\u0438\u0442\u0435 \u0443\u0437\u0435\u043B
+      \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+    objectIDsToHighlight:
+    - uzel_tokosyema
+    requiredEvents:
+    - uzelTokosyemaUp
+  - stepText: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u0442\u0435 \u0431\u043E\u043B\u0442\u044B
+      \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+    objectIDsToHighlight:
+    - Corpus_UT_screw_1
+    - Corpus_UT_screw_2
+    - Corpus_UT_screw_3
+    - Corpus_UT_screw_4
+    requiredEvents:
+    - CorpusUTScrewUP1
+    - CorpusUTScrewUP2
+    - CorpusUTScrewUP3
+    - CorpusUTScrewUP4
+  - stepText: "\u0421\u043D\u0438\u043C\u0438\u0442\u0435 \u043A\u043E\u0440\u043F\u0443\u0441
+      \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430.
+      \u0418 \u043E\u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u043D\u044B\u0435
+      \u043A\u043E\u043B\u044C\u0446\u0430."
+    objectIDsToHighlight:
+    - Corpus_uzla_tokosyema
+    requiredEvents:
+    - CorpusUzlaTokosyema
   measurementLogic: {fileID: 11400000, guid: 841a4fdc6a2b75e499fd8c5c24064b44, type: 2}

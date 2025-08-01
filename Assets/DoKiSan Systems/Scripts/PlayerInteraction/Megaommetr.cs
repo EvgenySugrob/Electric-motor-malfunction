@@ -7,6 +7,7 @@ public class Megaommetr : MonoBehaviour, IInteractable
 {
     [Header("ID object")]
     [SerializeField] private string objectID;
+    [SerializeField] string triggerEventName = "MegaommeterTake";
     [SerializeField] public bool IsHighlightedByScenario = false;
 
     [Header("AnimationInHand")]
@@ -36,6 +37,11 @@ public class Megaommetr : MonoBehaviour, IInteractable
     [SerializeField] GameObject cameraOverlay;
 
     private BoxCollider mainCollider;
+
+    private void Awake()
+    {
+        HighlightRegistry.Register(objectID, this);
+    }
 
     private void Start()
     {
@@ -120,6 +126,7 @@ public class Megaommetr : MonoBehaviour, IInteractable
 
 
             megaommetrBackPosition.gameObject.SetActive(true);
+            InstructionManager.Instance.OnEventTriggered(triggerEventName, 0f);
         }
     }
 

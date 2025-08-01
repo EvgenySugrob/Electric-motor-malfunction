@@ -40,6 +40,7 @@ public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
     {
         if(IsBroken(a,b))
         {
+            InstructionManager.Instance.OnEventTriggered("OpenWindingFaultTrigger",0f);
             return new MeasurementResult(GetDefectValue().ToString(), 0f);
         }
         else

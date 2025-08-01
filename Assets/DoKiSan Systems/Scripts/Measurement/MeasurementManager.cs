@@ -50,7 +50,6 @@ public class MeasurementManager : MonoBehaviour
 
     public void ClearProbePoint(MultimeterProbes probe)
     {
-        Debug.Log("CLEAR PROBE");
         if (probe.GetProbeId() == 0)
             pointA = null;
         else if (probe.GetProbeId() == 1)

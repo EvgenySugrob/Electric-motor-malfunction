@@ -61,6 +61,7 @@ public class MotorController : MonoBehaviour
     private Sequence intermittentSequence;                
     [SerializeField]private List<string> currentSymptoms = new List<string>();
     private Vector3 startMotorPosition;
+    private bool isJamming = false;
 
     private void Start()
     {
@@ -119,6 +120,9 @@ public class MotorController : MonoBehaviour
                     StopedVal();
                     //isStopedTrouble= true;
                     break;
+                case "«аклинивание":
+                    isJamming = true;
+                    break;
             }
         }
     }
@@ -135,7 +139,7 @@ public class MotorController : MonoBehaviour
 
     private void StartShaftPlay()
     {
-        onlyVal.position = shaftValPosition.position; //на fix добавить обнуление позиции
+        onlyVal.position = shaftValPosition.position;
     }
 
     private void StartOverheatingEffect(Color finalAnimColor)
@@ -234,6 +238,9 @@ public class MotorController : MonoBehaviour
 
     private void StartValRotation()
     {
+        if (isJamming)
+            return;
+
         if(isLowPowerTrouble == true)
         {
             currentSpeedRotation = rotationSpeed / 6;

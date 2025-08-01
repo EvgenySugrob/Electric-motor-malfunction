@@ -7,6 +7,7 @@ public class Multimeter : MonoBehaviour,IInteractable
 {
     [Header("ID object")]
     [SerializeField] private string objectID;
+    [SerializeField] string triggerEventName = "MultimeterTake";
     [SerializeField] public bool IsHighlightedByScenario = false;
 
     [Header("AnimationInHand")]
@@ -128,6 +129,8 @@ public class Multimeter : MonoBehaviour,IInteractable
 
             wheelMode.WheelColliderState(true);
             slotBack.gameObject.SetActive(true);
+
+            InstructionManager.Instance.OnEventTriggered(triggerEventName,0f);
         }
         else
         {

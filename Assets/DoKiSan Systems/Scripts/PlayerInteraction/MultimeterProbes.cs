@@ -9,6 +9,7 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
     [Header("ID object")]
     [SerializeField] private string objectID;
     [SerializeField] public bool IsHighlightedByScenario = false;
+    [SerializeField] string triggerEventName;
 
     [Header("ProbeInteraction")]
     [SerializeField] MouseCursorHandler mouseCursorHandler;
@@ -107,6 +108,8 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
             outline.OutlineColor = colorSelected;
 
             mouseCursorHandler.SetMultimeterProbe(this);
+
+            InstructionManager.Instance.OnEventTriggered(triggerEventName, 0f);
         }
         else
         {
@@ -144,8 +147,6 @@ public class MultimeterProbes : MonoBehaviour, IInteractable
         {
             child.gameObject.layer = targetLayerName;
         }
-
-        Debug.Log("LAYER " + gameObject.layer);
 
         measurementManager.ClearProbePoint(this);
 

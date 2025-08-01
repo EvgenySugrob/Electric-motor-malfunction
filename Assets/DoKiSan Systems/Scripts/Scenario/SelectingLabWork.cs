@@ -22,6 +22,7 @@ public class SelectingLabWork : MonoBehaviour
 
     public void OnMainMenuButtonClick()
     {
+        HighlightRegistry.Clear();
         SceneManager.LoadScene("Electro_engine_MainMenu");
     }
 

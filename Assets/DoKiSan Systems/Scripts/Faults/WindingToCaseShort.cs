@@ -46,6 +46,7 @@ public class WindingToCaseShort : FaultScenario, IMotorFaultTypeProvider
     {
         if (IsBroken(a,b))
         {
+            InstructionManager.Instance.OnEventTriggered("WindingToCaseShortTrigger",0f);
             return new MeasurementResult("0", breakAngle);
         }
         else

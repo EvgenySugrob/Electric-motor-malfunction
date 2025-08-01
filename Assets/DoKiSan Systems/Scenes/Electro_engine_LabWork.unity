@@ -7251,8 +7251,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7315,10 +7315,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2003089988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -82.68998}
-  m_SizeDelta: {x: 1000, y: 150}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 650, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &216194755
 GameObject:
@@ -9837,9 +9837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Uzel_tokosyema_cap
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: UzelTokosyemaCapUP
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 7251477111226765813}
@@ -9871,9 +9871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Screw_UT_3
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: ScrewUT3Up
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -9921,9 +9921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Screw_UT_1
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: ScrewUT1Up
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -10313,14 +10313,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma U2
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: U2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 299197268}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &299197268
 MonoBehaviour:
@@ -12653,9 +12654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Corpus_UT_screw_2
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: CorpusUTScrewUP2
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -12869,14 +12870,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma W1
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: W1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 372511718}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &372511718
 MonoBehaviour:
@@ -13015,6 +13017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectID: 
   IsHighlightedByScenario: 0
+  triggerEventName: 
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isSelected: 0
@@ -15699,14 +15702,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: GroundPoint
+  triggerEventName: GroundPointClick
   IsHighlightedByScenario: 0
   pointId: Ground
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 693468181}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 7937641866946997937}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &482906716
 MonoBehaviour:
@@ -17881,7 +17885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800c521a78de0684398b8abb499fbb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Megaommetr
+  triggerEventName: MegaommeterTake
   IsHighlightedByScenario: 0
   toolForHide: {fileID: 502023365}
   pointsInHand:
@@ -26193,14 +26198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma V2
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: V2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 748628673}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &748628673
 MonoBehaviour:
@@ -30821,9 +30827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Corpus_UT_screw_4
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: CorpusUTScrewUP4
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -30871,9 +30877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Corpus_UT_screw_3
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: CorpusUTScrewUP3
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -30942,9 +30948,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Corpus_UT_screw_1
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: CorpusUTScrewUP1
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -33656,7 +33662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964a288273e933e4ea0423675a92c699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyHighlighted: []
 --- !u!4 &935517748
 Transform:
   m_ObjectHideFlags: 0
@@ -36608,7 +36613,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -170}
-  m_SizeDelta: {x: 1100, y: 165}
+  m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1035732925
 GameObject:
@@ -37490,10 +37495,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c590ded4167b4448fc607ccded07db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: ModeWheel
   IsHighlightedByScenario: 0
   outline: {fileID: 1052698140}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   eulerRotation: {x: 0, y: 180, z: 0}
   eulerRotationBack: {x: 0, y: 0, z: 0}
   duration: 0.25
@@ -38136,8 +38141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: RedProbe
   IsHighlightedByScenario: 0
+  triggerEventName: RedProbeTake
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -38146,7 +38152,7 @@ MonoBehaviour:
   probeID: 1
   isMegaommeter: 0
   outline: {fileID: 488257122}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!1 &1090638022
@@ -44503,14 +44509,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma U1
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: U1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1246162692}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &1246162692
 MonoBehaviour:
@@ -46325,9 +46332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Screw_UT_4
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: ScrewUT4Up
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -50619,9 +50626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Screw_UT_2
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: ScrewUT2Up
   motorController: {fileID: 290835719}
   prerequisiteObjects: []
   nextRequisiteObjects:
@@ -59993,14 +60000,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma V1
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: V1
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1689372253}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &1689372253
 MonoBehaviour:
@@ -61707,14 +61715,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d823ae89e05a5f044bb5ac473e13d6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Klemma W2
+  triggerEventName: 
   IsHighlightedByScenario: 0
   pointId: W2
   measurementManager: {fileID: 177621095}
   probePosition: {fileID: 0}
   mouseCursorHandler: {fileID: 963194229}
   outline: {fileID: 1739834735}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   currentProbe: {fileID: 0}
 --- !u!114 &1739834735
 MonoBehaviour:
@@ -66952,8 +66961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cfb2b7f3a743a40800495d0be36836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: BlackProbe
   IsHighlightedByScenario: 0
+  triggerEventName: BlackProbeTake
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -66962,7 +66972,7 @@ MonoBehaviour:
   probeID: 0
   isMegaommeter: 0
   outline: {fileID: 1768393663}
-  stepColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   measurementPoint: {fileID: 0}
   measurementManager: {fileID: 177621095}
 --- !u!1 &1882675327
@@ -76525,6 +76535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectID: 
   IsHighlightedByScenario: 0
+  triggerEventName: 
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.052643314, g: 0.8584906, b: 0.1687697, a: 1}
   isSelected: 0
@@ -77083,7 +77094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4667a78ccfb6f94cb0ee613878c2722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Multimeter
+  triggerEventName: MultimeterTake
   IsHighlightedByScenario: 0
   toolForHide: {fileID: 982662434}
   pointsInHand:
@@ -77218,6 +77230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectID: 
   IsHighlightedByScenario: 0
+  triggerEventName: 
   mouseCursorHandler: {fileID: 963194229}
   colorSelected: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
   isSelected: 0
@@ -112695,9 +112708,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: uzel_tokosyema
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: uzelTokosyemaUp
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 3549528175332634293}
@@ -112708,7 +112721,7 @@ MonoBehaviour:
   isInitiallyActive: 1
   outline: {fileID: 0}
   stepColorOutline: {r: 0.050980393, g: 0.85882354, b: 0.16862746, a: 1}
-  defaultColorOutline: {r: 0, g: 0, b: 0, a: 0}
+  defaultColorOutline: {r: 1, g: 0.39841667, b: 0, a: 1}
   isDisassembled: 0
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
@@ -114877,9 +114890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0d681f8bfaf040966bf0ae399c0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectID: 
+  objectID: Corpus_uzla_tokosyema
   IsHighlightedByScenario: 0
-  triggerName: 
+  triggerName: CorpusUzlaTokosyema
   motorController: {fileID: 290835719}
   prerequisiteObjects:
   - {fileID: 7395483555916734184}

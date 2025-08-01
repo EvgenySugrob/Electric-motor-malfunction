@@ -6,6 +6,7 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
 {
     [Header("ID object")]
     [SerializeField] private string objectID;
+    [SerializeField] private string triggerEventName;
     [SerializeField] public bool IsHighlightedByScenario = false;
 
     public string pointId;
@@ -66,6 +67,8 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
 
                 isBusy= true;
 
+                InstructionManager.Instance.OnEventTriggered(triggerEventName, 0f);
+
                 ForceDisableOutline();
             }
         }
@@ -90,6 +93,12 @@ public class MeasurementPoint : MonoBehaviour,IInteractable
 
     private void ForceDisableOutline()
     {
+        if (IsHighlightedByScenario)
+        {
+            outline.OutlineColor = stepColorOutline;
+            return;
+        }
+
         outline.enabled= false;
     }
 

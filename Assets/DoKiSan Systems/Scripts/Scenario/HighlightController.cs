@@ -7,8 +7,6 @@ public class HighlightController : MonoBehaviour
 {
     public static HighlightController Instance { get; private set; }
 
-    [SerializeField] private List<GameObject> currentlyHighlighted = new();
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -18,21 +16,6 @@ public class HighlightController : MonoBehaviour
         }
 
         Instance = this;
-    }
-
-    public void ClearHighlight()
-    {
-        foreach (var go in currentlyHighlighted)
-        {
-            if (go == null)
-                continue;
-
-            Outline outline = go.GetComponent<Outline>();
-            if (outline != null)
-                outline.enabled = false;
-        }
-
-        currentlyHighlighted.Clear();
     }
 
     public void UnhighlightByID(string objectID)
@@ -60,32 +43,5 @@ public class HighlightController : MonoBehaviour
         //{
         //    obj.SetHighlight(true);
         //}
-    }
-
-    public void HighlightObjects(List<string> objectIDs)
-    {
-        ClearHighlight();
-
-        var interactables = GameObject.FindObjectsOfType<MonoBehaviour>().OfType<IInteractable>();
-
-        foreach (var interactable in interactables)
-        {
-            if (objectIDs.Contains(interactable.GetObjectID()))
-            {
-                GameObject go = ((MonoBehaviour)interactable).gameObject;
-
-                // Включаем подсветку
-                Outline outline = go.GetComponent<Outline>();
-                if (outline != null)
-                {
-                    outline.enabled = true;
-                    currentlyHighlighted.Add(go);
-                }
-                else
-                {
-                    Debug.LogWarning($"Объект {go.name} не имеет Outline-компонента");
-                }
-            }
-        }
     }
 }
