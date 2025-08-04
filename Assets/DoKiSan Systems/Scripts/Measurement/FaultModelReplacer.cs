@@ -15,6 +15,9 @@ public class FaultModelReplacer : MonoBehaviour
     [SerializeField] GameObject[] normalRing;
     [SerializeField] GameObject[] defectRing;
 
+    [Header("Progar")]
+    [SerializeField] GameObject[] progar;
+
     public void ApplyReplacement()
     {
         foreach (GameObject obj in objectsToDisable)
@@ -44,5 +47,21 @@ public class FaultModelReplacer : MonoBehaviour
         foreach (GameObject obj in defectRing)
             if (obj != null)
                 obj.SetActive(true);
+    }
+
+    public void ProgarRandom()
+    {
+        int willBe = Random.Range(0, 2);
+
+        Debug.Log($"WILLBE = {willBe}");
+
+        if(willBe == 1)
+        {
+            int index = Random.Range(0, progar.Length);
+
+            progar[index].SetActive(true);
+
+            Debug.Log($"Progar active {progar[index].name}");
+        }
     }
 }

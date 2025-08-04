@@ -48,22 +48,6 @@ public class OpenWindingFault : FaultScenario, IMotorFaultTypeProvider
             float normalValue = GetNormalValue();
             return new MeasurementResult(normalValue.ToString(),0);
         }
-
-
-        //bool isBroken =
-        //    (a == brokenPair.Item1 && b == brokenPair.Item2) ||
-        //    (a == brokenPair.Item2 && b == brokenPair.Item1);
-
-        //if(isBroken)
-        //{
-        //    return new MeasurementResult(GetDefectValue().ToString(), 270f);
-        //}
-        //else
-        //{
-        //    float normalValue = GetNormalValue();
-        //    float angle = 0f;
-        //    return new MeasurementResult(normalValue.ToString(), angle);
-        //}
     }
 
     public override MeasurementResult GetMegaommeterResult(string a, string b)

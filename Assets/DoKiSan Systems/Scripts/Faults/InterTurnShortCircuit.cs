@@ -1,0 +1,90 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Faults/Межвитковое замыкание")]
+public class InterTurnShortCircuit : FaultScenario, IMotorFaultTypeProvider
+{
+    private (string,string) brokenPair;
+    [Header("Multimeter")]
+    [SerializeField] private float minValue = 50.08f;
+    [SerializeField] private float maxValue = 51.27f;
+    [SerializeField] private float minDefect = 9.51f;
+    [SerializeField] private float maxDefect = 11.95f;
+    [Header("Meagaommeter")]
+    [SerializeField] private float breakAngle = 15f;
+    [SerializeField] private float normalAngle = 68f;
+
+    public override void InitializeScenario()
+    {
+        var candidates = new List<(string, string)>
+        {
+            ("U1","U2"),
+            ("V1","V2"),
+            ("W1","W2")
+        };
+
+        int index = Random.Range(0, candidates.Count);
+        brokenPair = candidates[index];
+
+        ReplaceModels();
+
+        Debug.Log($"[Fault Init] Межвитковое замыкание: {brokenPair.Item1} и {brokenPair.Item2}");
+    }
+
+    public override void ReplaceModels()
+    {
+        FaultModelReplacer replacer = GameObject.FindObjectOfType<FaultModelReplacer>();
+
+        if(replacer != null)
+        {
+            replacer.ProgarRandom();
+        }
+    }
+
+    private bool IsBroken(string a, string b)
+    {
+        return (a == brokenPair.Item1 && b == brokenPair.Item2) ||
+            (a == brokenPair.Item2 && b == brokenPair.Item1);
+    }
+
+    public override MeasurementResult GetMegaommeterResult(string a, string b)
+    {
+        if (IsBroken(a, b))
+        {
+            InstructionManager.Instance.OnEventTriggered("InterTurnShortCircuit", 0f);
+            return new MeasurementResult("0", breakAngle);
+        }
+        else
+        {
+            return new MeasurementResult("0", normalAngle);
+        }
+    }
+
+    public override MeasurementResult GetMultimeterResult(string a, string b)
+    {
+        if (IsBroken(a, b))
+        {
+            return new MeasurementResult(GetDefectValue().ToString(), 0f);
+        }
+        else
+        {
+            float normalValue = GetNormalValue();
+            return new MeasurementResult(normalValue.ToString(), 0);
+        }
+    }
+
+    public MotorFaultType GetMotorFaultType() => MotorFaultType.InterTurnShortCircuit;
+
+    private float GetNormalValue()
+    {
+        float value = Random.Range(minValue, maxValue);
+        return Mathf.Round(value * 100f) / 100f;
+    }
+
+    private float GetDefectValue()
+    {
+        float value = Random.Range(minDefect, maxDefect);
+        return Mathf.Round(value * 100f) / 100f;
+    }
+}
