@@ -30,6 +30,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
     [Header("Outline")]
     [SerializeField] List<Outline> childsOutline;
 
+    [Header("LogText")]
+    [SerializeField] string firstTextToLog;
+    [SerializeField] string secondTextToLog;
+
 
     public GameObject[] PrerequisiteObjects
     {
@@ -251,6 +255,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private void CheckedForNextStep()
     {
         InstructionManager.Instance.OnEventTriggered(triggerName,0);
+        LoggingUserActions.Instance.AddUserActionInLog(firstTextToLog);
         IsHighlightedByScenario = false;
     }
 
@@ -311,6 +316,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
         }
         isDisassembled = false;
         AssembleManager.Instance.RemoveDisassembledObjecct(this);
+
+        LoggingUserActions.Instance.AddUserActionInLog(secondTextToLog);
     }
 
     public void EnableObjectToDisable()

@@ -20,6 +20,10 @@ public class PowerSwitch : MonoBehaviour, IInteractable
     [SerializeField]private bool isOn = false;
     [SerializeField]private Color defaultColorOutline;
 
+    [Header("LogText")]
+    [SerializeField] string firstTextToLog = "Включение электродвигателя.";
+    [SerializeField] string secondTextToLog = "Выключение электродвигателя.";
+
     private void Awake()
     {
         HighlightRegistry.Register(objectID, this);
@@ -68,10 +72,12 @@ public class PowerSwitch : MonoBehaviour, IInteractable
         if(isOn)
         {
             InstructionManager.Instance.OnEventTriggered("SwitchOn",timeWait);
+            LoggingUserActions.Instance.AddUserActionInLog(firstTextToLog);
         }
         else
         {
             InstructionManager.Instance.OnEventTriggered("SwitchOff",0);
+            LoggingUserActions.Instance.AddUserActionInLog(secondTextToLog);
         }
 
         if (!motorController.GetIsStopedNow())

@@ -40,6 +40,10 @@ public class Multimeter : MonoBehaviour,IInteractable
     [Header("Overlay")]
     [SerializeField] GameObject cameraOverlay;
 
+    [Header("LogText")]
+    [SerializeField] string firstTextToLog = "Взял мультиметр в руку.";
+    [SerializeField] string secondTextToLog = "Вернул мультиметр на стол.";
+
     private BoxCollider mainCollider;
 
     private void Awake()
@@ -131,6 +135,7 @@ public class Multimeter : MonoBehaviour,IInteractable
             slotBack.gameObject.SetActive(true);
 
             InstructionManager.Instance.OnEventTriggered(triggerEventName,0f);
+            LoggingUserActions.Instance.AddUserActionInLog(firstTextToLog);
         }
         else
         {
@@ -242,6 +247,7 @@ public class Multimeter : MonoBehaviour,IInteractable
         slotBack.OutlineForceDisable();
 
         PlayerControlDisable(true);
+        LoggingUserActions.Instance.AddUserActionInLog(secondTextToLog);
     }
 
     public void ProbesBack()

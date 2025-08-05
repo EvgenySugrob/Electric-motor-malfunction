@@ -92,15 +92,23 @@ public class MeasurementManager : MonoBehaviour
                     .Play();
             }
 
-            string currentTime = DateTime.Now.ToString("HH:mm:ss");
+            if(ScenarioManager.Instance.IsExam())
+            {
+                string currentResult = $"{pointA} - {pointB}: {result.displayText}";
 
-            GameObject spawnLogText = Instantiate(prefabTextSpawn, spawnPoint);
-            spawnLogText.transform.SetAsFirstSibling();
+                LoggingUserActions.Instance.AddUserActionInLog(currentResult);
+            }
 
-            prefabText = spawnLogText.GetComponent<TMP_Text>();
-            prefabText.text = $"{pointA} - {pointB}: {result.displayText} Om - {currentTime}";
 
-            spawnLogText.SetActive(true);
+            //string currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+            //GameObject spawnLogText = Instantiate(prefabTextSpawn, spawnPoint);
+            //spawnLogText.transform.SetAsFirstSibling();
+
+            //prefabText = spawnLogText.GetComponent<TMP_Text>();
+            //prefabText.text = $"{pointA} - {pointB}: {result.displayText} Om - {currentTime}";
+
+            //spawnLogText.SetActive(true);
         }
     }
 

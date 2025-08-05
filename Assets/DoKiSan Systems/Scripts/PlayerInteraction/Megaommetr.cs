@@ -36,6 +36,10 @@ public class Megaommetr : MonoBehaviour, IInteractable
     [Header("Overlay")]
     [SerializeField] GameObject cameraOverlay;
 
+    [Header("LogText")]
+    [SerializeField] string firstTextToLog = "Взял мегаомметр в руку.";
+    [SerializeField] string secondTextToLog = "Вернул мегаомметр на стол.";
+
     private BoxCollider mainCollider;
 
     private void Awake()
@@ -127,6 +131,7 @@ public class Megaommetr : MonoBehaviour, IInteractable
 
             megaommetrBackPosition.gameObject.SetActive(true);
             InstructionManager.Instance.OnEventTriggered(triggerEventName, 0f);
+            LoggingUserActions.Instance.AddUserActionInLog(firstTextToLog);
         }
     }
 
@@ -171,6 +176,7 @@ public class Megaommetr : MonoBehaviour, IInteractable
         megaommetrBackPosition.OutlineForceDisable();
 
         PlayerControlDisable(true);
+        LoggingUserActions.Instance.AddUserActionInLog(secondTextToLog);
     }
 
     private YieldInstruction ToZeroPoint()

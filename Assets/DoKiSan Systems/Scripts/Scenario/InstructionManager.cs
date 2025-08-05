@@ -48,6 +48,9 @@ public class InstructionManager : MonoBehaviour
 
     public void OnEventTriggered(string eventKey, float waitTimeToNextStep)
     {
+        if (ScenarioManager.Instance.IsExam())
+            return;
+
         if (currentStep >= steps.Count)
             return;
 

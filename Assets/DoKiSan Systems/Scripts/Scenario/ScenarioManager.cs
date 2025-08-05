@@ -13,7 +13,7 @@ public class ScenarioManager : MonoBehaviour
     [SerializeField] private List<MotorFaultScenarioSO> scenarios;
     [SerializeField] private MotorFaultScenarioSO currentScenario;
 
-    private bool isExamMode;
+    [SerializeField]private bool isExamMode;
     [SerializeField] private bool isSceneSetupPending;
 
     private void Awake()
@@ -174,6 +174,11 @@ public class ScenarioManager : MonoBehaviour
         currentScenario = scenarios[randomIndex];
         isExamMode = true;
         isSceneSetupPending = true;
+    }
+
+    public bool IsExam()
+    {
+        return isExamMode;
     }
 }
 

@@ -6120,6 +6120,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
 --- !u!114 &180281903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9991,6 +9995,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
 --- !u!114 &289030800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10165,6 +10173,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u043A\u0440\u044B\u0448\u043A\u0443
+    \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043A\u0440\u044B\u0448\u043A\u0443
+    \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!114 &290835728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10194,6 +10206,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &290835729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10244,6 +10262,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &290835731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12553,6 +12577,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
 --- !u!65 &346699622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13051,6 +13081,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!1 &352118001
 GameObject:
   m_ObjectHideFlags: 0
@@ -14509,6 +14545,129 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411432608}
   m_Mesh: {fileID: 7763869600513471790, guid: 79e27ee317c5a68479271090dfa12d6b, type: 3}
+--- !u!1001 &413275711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 928875885}
+    m_Modifications:
+    - target: {fileID: 661997153721026140, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_Name
+      value: ExamButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 661997153721026140, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9abad0316f0b55343b3e0d65ca5c6eec, type: 3}
 --- !u!114 &415379713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14542,6 +14701,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u043A\u0440\u044B\u0448\u043A\u0443
+    \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043A\u0440\u044B\u0448\u043A\u0443
+    \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
 --- !u!64 &415379718
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18580,6 +18743,10 @@ MonoBehaviour:
   isInHand: 0
   megaommetrBackPosition: {fileID: 2069414006}
   cameraOverlay: {fileID: 1329207816}
+  firstTextToLog: "\u0412\u0437\u044F\u043B \u043C\u0435\u0433\u0430\u043E\u043C\u043C\u0435\u0442\u0440
+    \u0432 \u0440\u0443\u043A\u0443."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043C\u0435\u0433\u0430\u043E\u043C\u043C\u0435\u0442\u0440
+    \u043D\u0430 \u0441\u0442\u043E\u043B."
 --- !u!1 &534537000
 GameObject:
   m_ObjectHideFlags: 0
@@ -21259,6 +21426,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
 --- !u!1 &599014710
 GameObject:
   m_ObjectHideFlags: 0
@@ -24031,6 +24204,8 @@ MonoBehaviour:
   - {fileID: 315486882}
   - {fileID: 8665353744751518670}
   - {fileID: 8752377259436687579}
+  firstTextToLog: 
+  secondTextToLog: 
 --- !u!65 &667263293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31567,6 +31742,12 @@ Transform:
   - {fileID: 2091627562}
   m_Father: {fileID: 1222414992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &870090178 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5260859348789156604, guid: 9abad0316f0b55343b3e0d65ca5c6eec,
+    type: 3}
+  m_PrefabInstance: {fileID: 413275711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &870302769
 GameObject:
   m_ObjectHideFlags: 0
@@ -31628,6 +31809,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &872253469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31678,6 +31865,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &872253471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31749,6 +31942,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!1 &873458381
 GameObject:
   m_ObjectHideFlags: 0
@@ -34292,6 +34491,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186373823}
+    - targetCorrespondingSourceObject: {fileID: 8945312863287201242, guid: d808dff2ed51f854da74993641526304,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 870090178}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d808dff2ed51f854da74993641526304, type: 3}
 --- !u!224 &928875885 stripped
@@ -35253,7 +35456,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.341, y: 1.23, z: 0.017}
+  m_LocalPosition: {x: -1, y: 1.23, z: 0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35319,8 +35522,8 @@ MonoBehaviour:
   scrollSpeed: 0.025
   maxPitchAngle: 80
   minPitchAngle: -80
-  horizontalBounds: {x: -10, y: 10}
-  depthBounds: {x: -10, y: 10}
+  horizontalBounds: {x: -1.25, y: 0.16}
+  depthBounds: {x: -0.75, y: 0.75}
   maxHeight: 10
   minHeight: 0.9
   smoothDuration: 0.25
@@ -36676,6 +36879,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
 --- !u!114 &1018054629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37726,6 +37933,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
 --- !u!65 &1043210151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38819,6 +39032,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
 --- !u!65 &1085262738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39556,6 +39775,8 @@ MonoBehaviour:
   - {fileID: 4967885224259251858}
   - {fileID: 8650508920145628661}
   - {fileID: 8553196953276269728}
+  firstTextToLog: 
+  secondTextToLog: 
 --- !u!65 &1106641650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39887,6 +40108,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u043A\u043E\u0436\u0443\u0445
+    \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043A\u043E\u0436\u0443\u0445
+    \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
 --- !u!64 &1109386103
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40275,6 +40500,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u043E\u0436\u0443\u0445\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440\u0430."
 --- !u!114 &1115298807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44836,6 +45065,7 @@ GameObject:
   - component: {fileID: 1233108859}
   - component: {fileID: 1233108863}
   - component: {fileID: 1233108864}
+  - component: {fileID: 1233108865}
   m_Layer: 5
   m_Name: --------------------UI-----------------
   m_TagString: Untagged
@@ -44974,6 +45204,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1233108865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233108858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a575bab6ab370d4a87c67e8b275f859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 3315353741073615616}
+  prefabTextSpawn: {fileID: 3838300398510058738, guid: e4c23ebd22915c749b2a363db5b966a2,
+    type: 3}
 --- !u!1 &1233956952
 GameObject:
   m_ObjectHideFlags: 0
@@ -47353,6 +47598,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &1290033353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47421,6 +47672,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u043A\u043B\u0435\u043C\u043D\u043E\u0439
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0438."
 --- !u!65 &1290801531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51226,6 +51483,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u043F\u0435\u0440\u0432\u044B\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
 --- !u!1 &1394838757
 GameObject:
   m_ObjectHideFlags: 0
@@ -51721,6 +51984,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0432\u0438\u043D\u0442 \u043A\u0440\u044B\u0448\u043A\u0438 \u0443\u0437\u043B\u0430
+    \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!65 &1418151572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60037,6 +60306,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
 --- !u!1 &1660201926
 GameObject:
   m_ObjectHideFlags: 0
@@ -68898,6 +69173,12 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u041E\u0442\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
+  secondTextToLog: "\u0417\u0430\u043A\u0440\u0443\u0442\u0438\u043B \u0432\u0442\u043E\u0440\u043E\u0439
+    \u0431\u043E\u043B\u0442 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u0433\u043E
+    \u0449\u0438\u0442\u0430."
 --- !u!1 &1888389085
 GameObject:
   m_ObjectHideFlags: 0
@@ -69952,6 +70233,9 @@ MonoBehaviour:
   angleRotate: {x: 0, y: 0, z: 0}
   isOn: 0
   defaultColorOutline: {r: 0.11481601, g: 1, b: 0.033018887, a: 0}
+  firstTextToLog: "\u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
+  secondTextToLog: "\u0412\u044B\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
+    \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
 --- !u!1 &1901976981
 GameObject:
   m_ObjectHideFlags: 0
@@ -70441,6 +70725,8 @@ MonoBehaviour:
   angleRotate: {x: 180, y: 0, z: 0}
   isOn: 0
   defaultColorOutline: {r: 1, g: 0.4, b: 0, a: 1}
+  firstTextToLog: "\u0412\u043A\u043B\u044E\u0447\u0438\u043B \u043F\u0438\u0442\u0430\u043D\u0438\u0435."
+  secondTextToLog: "\u0412\u044B\u043A\u043B\u044E\u0447\u0438\u043B \u043F\u0438\u0442\u0430\u043D\u0438\u0435."
 --- !u!114 &1918923734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75725,6 +76011,8 @@ MonoBehaviour:
   - {fileID: 297411480}
   - {fileID: 8665353744751518670}
   - {fileID: 8752377259436687579}
+  firstTextToLog: 
+  secondTextToLog: 
 --- !u!65 &2054242770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78704,6 +78992,10 @@ MonoBehaviour:
   slotBack: {fileID: 91184213}
   wheelMode: {fileID: 1052698139}
   cameraOverlay: {fileID: 1920760806}
+  firstTextToLog: "\u0412\u0437\u044F\u043B \u043C\u0443\u043B\u044C\u0442\u0438\u043C\u0435\u0442\u0440
+    \u0432 \u0440\u0443\u043A\u0443."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043C\u0443\u043B\u044C\u0442\u0438\u043C\u0435\u0442\u0440
+    \u043D\u0430 \u0441\u0442\u043E\u043B."
 --- !u!65 &2140731290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113880,6 +114172,8 @@ MonoBehaviour:
   - {fileID: 987826497}
   - {fileID: 8665353744751518670}
   - {fileID: 8752377259436687579}
+  firstTextToLog: "\u0418\u0437\u0432\u043B\u0435\u043A \u0432\u0430\u043B."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u0432\u0430\u043B."
 --- !u!65 &7337306976936035647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114369,6 +114663,10 @@ MonoBehaviour:
   - {fileID: 50674486}
   - {fileID: 71163618}
   - {fileID: 2104759934}
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u0442\u0440\u0430\u0432\u0435\u0440\u0441\u0443
+    \u0441 \u0449\u0435\u0442\u043A\u0430\u043C\u0438."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u0442\u0440\u0430\u0432\u0435\u0441\u0443
+    \u0441 \u0449\u0435\u0442\u043A\u0430\u043C\u0438."
 --- !u!65 &7395483555916734187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -116506,6 +116804,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u043A\u043E\u0440\u043F\u0443\u0441
+    \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043A\u043E\u0440\u043F\u0443\u0441
+    \u0443\u0437\u043B\u0430 \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u0430."
 --- !u!23 &7814217288714702189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119010,6 +119312,10 @@ MonoBehaviour:
   powerSwitch: {fileID: 1918923733}
   animationDisassembly: {fileID: 0}
   childsOutline: []
+  firstTextToLog: "\u0423\u0431\u0440\u0430\u043B \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u044B\u0439
+    \u0449\u0438\u0442."
+  secondTextToLog: "\u0412\u0435\u0440\u043D\u0443\u043B \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u044B\u0439
+    \u0449\u0438\u0442."
 --- !u!114 &8269950684225676204
 MonoBehaviour:
   m_ObjectHideFlags: 0
