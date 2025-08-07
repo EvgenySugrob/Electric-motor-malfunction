@@ -180,5 +180,10 @@ public class ScenarioManager : MonoBehaviour
     {
         return isExamMode;
     }
+
+    public MotorFaultScenarioSO GetScenario()
+    {
+        return currentScenario;
+    }
 }
 

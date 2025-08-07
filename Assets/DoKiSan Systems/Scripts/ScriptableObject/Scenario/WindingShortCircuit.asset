@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: WindingShortCircuit
   m_EditorClassIdentifier: 
-  faultType: 1
+  faultType: 2
   description: "\u0417\u0430\u043C\u044B\u043A\u0430\u043D\u0438\u0435 \u043C\u0435\u0436\u0434\u0443
     \u043E\u0431\u043C\u043E\u0442\u043A\u0430\u043C\u0438"
   symptoms:

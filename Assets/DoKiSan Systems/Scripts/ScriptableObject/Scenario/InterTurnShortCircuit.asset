@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: InterTurnShortCircuit
   m_EditorClassIdentifier: 
-  faultType: 2
+  faultType: 3
   description: "\u041C\u0435\u0436\u0432\u0438\u0442\u043A\u043E\u0432\u043E\u0435
     \u0437\u0430\u043C\u044B\u043A\u0430\u043D\u0438\u0435"
   symptoms:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: WindingToCaseShort
   m_EditorClassIdentifier: 
-  faultType: 3
+  faultType: 4
   description: "\u0417\u0430\u043C\u044B\u043A\u0430\u043D\u0438\u0435 \u043D\u0430
     \u043A\u043E\u0440\u043F\u0443\u0441"
   symptoms:

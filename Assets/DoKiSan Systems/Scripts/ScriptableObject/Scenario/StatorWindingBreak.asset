@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: StatorWindingBreak
   m_EditorClassIdentifier: 
-  faultType: 0
+  faultType: 1
   description: "\u041E\u0431\u0440\u044B\u0432 \u043E\u0431\u043C\u043E\u0442\u043A\u0438
     \u0441\u0442\u0430\u0442\u043E\u0440\u0430"
   symptoms:

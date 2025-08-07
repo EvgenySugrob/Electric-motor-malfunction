@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: SlipRingOrBrushFailure
   m_EditorClassIdentifier: 
-  faultType: 4
+  faultType: 5
   description: "\u0412\u044B\u0445\u043E\u0434 \u0438\u0437 \u0441\u0442\u0440\u043E\u044F
     \u0442\u043E\u043A\u043E\u0441\u044A\u0435\u043C\u043D\u044B\u0445 \u043A\u043E\u043B\u0435\u0446"
   symptoms:

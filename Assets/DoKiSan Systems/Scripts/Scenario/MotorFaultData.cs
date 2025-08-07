@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum MotorFaultType
 {
+    None,
     StatorWindingBreak, // Обрыв обмотки статора
     WindingShortCircuit, // Замыкание между обмотками
     InterTurnShortCircuit, // Межвитковое замыкание

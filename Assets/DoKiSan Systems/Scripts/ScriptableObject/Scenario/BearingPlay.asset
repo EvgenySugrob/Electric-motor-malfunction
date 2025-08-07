@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654dcb39446d49048b7ec97dad196b46, type: 3}
   m_Name: BearingPlay
   m_EditorClassIdentifier: 
-  faultType: 6
+  faultType: 7
   description: "\u041B\u044E\u0444\u0442 \u0432 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0430\u0445
     \u0432\u0430\u043B\u0430"
   symptoms:
