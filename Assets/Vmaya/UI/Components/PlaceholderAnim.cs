@@ -47,5 +47,12 @@ namespace Vmaya.UI.Components
         {
             if (!string.IsNullOrEmpty(deselectClip) && string.IsNullOrEmpty(inputField.text)) animator.Play(deselectClip);
         }
+
+        public void StartAnimRandomNumber()
+        {
+            animator.Play(selectClip);
+        }
     }
+
+    
 }

@@ -13,9 +13,9 @@ public class SelectingLabWork : MonoBehaviour
         SceneManager.LoadScene("Electro_engine_LabWork");
     }
 
-    public void OnExamButtonClicked()
+    public void OnExamButtonClicked(int numberLab)
     {
-        ScenarioManager.Instance.StartExamMode();
+        ScenarioManager.Instance.StartExamMode(numberLab);
 
         SceneManager.LoadScene("Electro_engine_LabWork");
     }

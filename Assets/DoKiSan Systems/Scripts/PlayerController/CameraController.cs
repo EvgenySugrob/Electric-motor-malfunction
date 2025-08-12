@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform focusPoint;
     [SerializeField] private float mouseSensitivity = 2f;
     [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float sprintMultiplier = 2f;
     [SerializeField] private float scrollSpeed = 5f;
     [SerializeField] private float maxPitchAngle = 80f;
     [SerializeField] private float minPitchAngle = -80f;
@@ -28,12 +29,14 @@ public class CameraController : MonoBehaviour
     private InputAction rightClickAction;
     private InputAction scrollAction;
     private InputAction moveAction;
+    private InputAction sprintAction;
 
     // Camera state
     private Camera cam;
     private float yaw = 0f;
     private float pitch = 0f;
     private bool isRotating = false;
+    private bool isSprinting = false;
 
     // Movement
     private Vector2 moveInput;
@@ -68,21 +71,27 @@ public class CameraController : MonoBehaviour
         rightClickAction = inputActions["RightClick"];
         scrollAction = inputActions["Scroll"];
         moveAction = inputActions["Move"];
+        sprintAction = inputActions["Sprint"];
 
         rightClickAction.started += OnRightClickStarted;
         rightClickAction.canceled += OnRightClickCanceled;
         scrollAction.performed += OnScroll;
         moveAction.performed += OnMove;
         moveAction.canceled += OnMoveStop;
+        sprintAction.performed += OnSprintStart;
+        sprintAction.canceled += OnSprintStop;
 
         mousePositionAction.Enable();
         rightClickAction.Enable();
         scrollAction.Enable();
         moveAction.Enable();
+        sprintAction.Enable();
     }
 
     private void OnDisable()
     {
+        moveInput = Vector2.zero;
+
         if (rightClickAction != null)
         {
             rightClickAction.started -= OnRightClickStarted;
@@ -96,6 +105,12 @@ public class CameraController : MonoBehaviour
         {
             moveAction.performed -= OnMove;
             moveAction.canceled -= OnMoveStop;
+        }
+
+        if(sprintAction!=null)
+        {
+            sprintAction.started -= OnSprintStart;
+            sprintAction.canceled -= OnSprintStop;
         }
     }
 
@@ -141,6 +156,16 @@ public class CameraController : MonoBehaviour
         moveInput = Vector2.zero;
     }
 
+    private void OnSprintStart(InputAction.CallbackContext context)
+    {
+        isSprinting = true;
+    }
+
+    private void OnSprintStop(InputAction.CallbackContext context)
+    {
+        isSprinting = false;
+    }
+
     private void HandleRotation()
     {
         if (!isRotating) return;
@@ -162,9 +187,10 @@ public class CameraController : MonoBehaviour
 
         Vector3 movement = Vector3.zero;
         movement += forward * moveInput.y;  
-        movement += right * moveInput.x;    
+        movement += right * moveInput.x;
 
-        movement *= moveSpeed * Time.deltaTime;
+        float speed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
+        movement *= speed * Time.deltaTime;
 
         cameraPosition += movement;
 

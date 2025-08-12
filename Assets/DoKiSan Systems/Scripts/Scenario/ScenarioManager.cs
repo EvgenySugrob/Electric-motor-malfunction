@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,6 +78,19 @@ public class ScenarioManager : MonoBehaviour
         ConfigureDiagnosticTools();
         ConfigureFixAction();
         ConfigurableInstruction();
+
+
+        ConfigureCrackSpawn(); //выкл на релиз
+    }
+
+    private void ConfigureCrackSpawn()
+    {
+        CrackSpawn crackSpawn = FindObjectOfType<CrackSpawn>();
+
+        if(crackSpawn != null)
+        {
+            crackSpawn.CrackSpawnSetting();
+        }
     }
 
     private void ConfigurableInstruction()
@@ -168,10 +182,10 @@ public class ScenarioManager : MonoBehaviour
     //    return currentScenario;
     //}
 
-    public void StartExamMode()
-    {
-        int randomIndex = Random.Range(0, scenarios.Count);
-        currentScenario = scenarios[randomIndex];
+    public void StartExamMode(int value)
+    {       
+        //int randomIndex = Random.Range(0, scenarios.Count);
+        currentScenario = scenarios[value];
         isExamMode = true;
         isSceneSetupPending = true;
     }

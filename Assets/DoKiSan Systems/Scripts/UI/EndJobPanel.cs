@@ -23,6 +23,10 @@ public class EndJobPanel : MonoBehaviour
     [SerializeField] Button endBt;
     [SerializeField] GameObject mainMenuExit;
 
+    [Header("CrackToggle")]
+    [SerializeField] CrackSpawn crackSpawn;
+    [SerializeField] ToggleTrouble crack;
+
     private List<ToggleTrouble> isOnToggles = new();
     
     public void EndButtonClick()
@@ -81,6 +85,25 @@ public class EndJobPanel : MonoBehaviour
                 {
                     toggle.SetTextColor(defaultTextColor);
                 }
+            }
+        }
+
+        if (crackSpawn.GetCrackState())
+        {
+            if (crack.GetToggleState())
+            {
+                crack.SetTextColor(correctColor);
+            }
+            else
+            {
+                crack.SetTextColor(wrongColor);
+            }
+        }
+        else
+        {
+            if (crack.GetToggleState())
+            {
+                crack.SetTextColor(wrongColor);
             }
         }
     }
