@@ -85,12 +85,13 @@ public class ScenarioManager : MonoBehaviour
 
     private void ConfigureCrackSpawn()
     {
-        CrackSpawn crackSpawn = FindObjectOfType<CrackSpawn>();
+        //CrackSpawn crackSpawn = FindObjectOfType<CrackSpawn>();
 
-        if(crackSpawn != null)
-        {
-            crackSpawn.CrackSpawnSetting();
-        }
+        //if(crackSpawn != null)
+        //{
+        //    crackSpawn.CrackSpawnSetting();
+        //}
+        Debug.Log("crack - check and check EndJobPanel.cs");
     }
 
     private void ConfigurableInstruction()

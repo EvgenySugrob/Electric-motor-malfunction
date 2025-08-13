@@ -88,24 +88,24 @@ public class EndJobPanel : MonoBehaviour
             }
         }
 
-        if (crackSpawn.GetCrackState())
-        {
-            if (crack.GetToggleState())
-            {
-                crack.SetTextColor(correctColor);
-            }
-            else
-            {
-                crack.SetTextColor(wrongColor);
-            }
-        }
-        else
-        {
-            if (crack.GetToggleState())
-            {
-                crack.SetTextColor(wrongColor);
-            }
-        }
+        //if (crackSpawn.GetCrackState())
+        //{
+        //    if (crack.GetToggleState())
+        //    {
+        //        crack.SetTextColor(correctColor);
+        //    }
+        //    else
+        //    {
+        //        crack.SetTextColor(wrongColor);
+        //    }
+        //}
+        //else
+        //{
+        //    if (crack.GetToggleState())
+        //    {
+        //        crack.SetTextColor(wrongColor);
+        //    }
+        //}
     }
 
     private void CheckDropDown()

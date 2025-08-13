@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DoKiSan Systems
-  productName: EE-SIM-EMM
+  productName: EE-SIM-EMF
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -856,7 +856,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  additionalIl2CppArgs: 
+  additionalIl2CppArgs: --linker-flags="/MAP:"D:/GitProject/GitLab/Electric-motor-malfunction/Assets\Mapfile.map""
   scriptingRuntimeVersion: 1
   gcIncremental: 1
   gcWBarrierValidation: 0
